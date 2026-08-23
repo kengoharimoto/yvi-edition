@@ -9,9 +9,10 @@ Collation so far stops at Tm10v6 / L10v10 (cf. `00MSS to look at.txt`:
 
 ## Lahore (L)
 
-Images: `Lahore MS/` in this directory (copied 2026-08-23 from
-`~/Documents/MSS/YVi MSS/YVi L/`; the old `.jpg alias` files there point to a
-defunct `/Users/kengo/Dropbox/...` path). Parenthetical part of the file name
+Images: `Lahore MS/` in this directory (real files for folios 8r–15v, copied
+2026-08-23 from `~/Documents/MSS/YVi MSS/YVi L/`. The old `.jpg alias` files,
+which pointed to the defunct `/Users/kengo/Dropbox/MSS/YVi MSS/YVi L/` path,
+were deleted 2026-08-23). Parenthetical part of the file name
 = plate number. 11 lines per side, ≈3 E-lines per MS line, ≈1.2 E-pages per side.
 
 | E              | L folio                | image file      |
