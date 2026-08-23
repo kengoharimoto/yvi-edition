@@ -1,0 +1,85 @@
+%!TEX TS-program = xelatex -output-driver="xdvipdfmx -q -E" "$1"
+%!TEX encoding = UTF-8 Unicode
+% Devanagari counterpart of roman_edition.tex.
+% The edition text is text07dn.tex, generated from text07.tex
+% (IAST -> Devanagari; markup, labels, sigla and comments untouched).
+\documentclass[a4paper,article,10pt]{memoir}
+\usepackage[xetex]{graphicx,color}
+\usepackage{natbib}
+\usepackage[para*,Aplain,Bpara,Cplain,Dplain,Eplain,addpageno]{ednotes}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{american} % apperantly for polyglossia
+\setotherlanguage{sanskrit}   % ditto
+\newfontfamily\sanskritfont[Scale=1.06, Mapping=tex-text, BoldFont={Devanagari MT Bold}]{Devanagari MT}
+% Headings are English, so the sans family stays Latin.
+\newfontfamily\sanskritfontsf[Mapping=tex-text,
+  ItalicFont=lmsans10-oblique.otf,
+  BoldFont=lmsans10-bold.otf]{lmsans10-regular.otf}
+\newfontfamily\sanskritfonttt[Scale=1.06, Mapping=tex-text, BoldFont={Devanagari MT Bold}]{Devanagari MT}
+\newfontfamily\latinroman[Mapping=tex-text,
+  ItalicFont=lmroman10-italic.otf,
+  BoldFont=lmroman10-bold.otf]{lmroman10-regular.otf}
+\catcode`\­=\active\def­{\-} % unicode discrete hyphen
+\usepackage{ifthen}
+\usepackage{mparhack} % to have \marginpar at the correct side.
+\usepackage{hyperref} % breaks \ldots if loaded before ellipsis;
+\usepackage{ellipsis} % \ldots does not work without this; has to be placed after hyperref...
+\usepackage[usenames]{xcolor}
+\usepackage{crited}
+
+% Memoir thing
+\setsecnumdepth{subparagraph}
+\maxsecnumdepth{subparagraph}
+\headstyles{komalike}
+
+% see TeXBook p.356
+\def\myraggedright{%
+  \rightskip=0pt plus1em
+  \spaceskip=.3333em \xspaceskip=.5em\relax
+}
+\newcommand{\pratika}[1]{\marginpar{\myraggedright{\footnotesize{\emph{#1}\ldots}}}}
+
+% this is used throughout this trl.  I can't bother reinprementing it for now.  So, it's an empty command.
+\newcommand{\refm}[1]{}
+
+% In the Devanagari version the kundala is the Devanagari abbreviation sign.
+\renewcommand{\defkundala}{\renewcommand{\kundala}{॰}}
+% Under current polyglossia, \rmfamily inside the sanskrit environment stays
+% the Devanagari font, so \cm must select the Latin family explicitly.
+\renewcommand{\cm}{\latinroman}
+% Apparatus: readings and lemmata in Devanagari, sigla and framework in Latin.
+\renewcommand{\rdg}[2]{{\sanskritfont #1}\ {\cm #2}}
+\renewcommand*{\Anotefmt}{%
+  \renewcommand{\lemmafmt}[1]{{\sanskritfont\kundala ##1}\thinspace]\,}%
+  \renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt ##1}%
+}
+% Symbols that must not be looked up in the Devanagari font:
+\renewcommand{\om}{{\cm\emph{om.}}}
+\renewcommand{\dag}{{\cm\textdagger}}
+\renewcommand{\ins}{\il{}}
+\renewcommand{\ine}{\ir{}}
+\renewcommand*{\lemmaellipsis}{{\cm\,\ldots\,}}
+% Lemma-ellipsis kundalas in Devanagari:
+\renewcommand*{\varsm}[2]{\Anote{#1\<<॰>\>}{#2}}
+\renewcommand*{\vrtsm}[3]{\mms\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\-}
+\renewcommand*{\vrtmm}[3]{\-\mms\defkundala\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\undefkundala\-}
+% The bottom (Bhāṣya) register is pure Devanagari.
+\renewcommand*{\Bnotefmt}{%
+  \renewcommand{\lemmafmt}[1]{\enskip}%
+  \renewcommand{\notefmt}[1]{\sanskritfont\spaceskip 0pt \xspaceskip 0pt ##1}%
+}
+
+\author{Kengo Harimoto}
+\title{A Partial Critical Edition of Pātañjalayogaśāstravivaraṇa 1.7\\ (Devanāgarī text)}
+
+\begin{document}
+\maketitle
+
+% Declaration form rather than \begin{sanskrit}: text07dn.tex carries its
+% own \end{document} (like text07.tex), which would otherwise end the
+% document inside the environment.
+\selectlanguage{sanskrit}%
+\input{text07dn}
+
+\end{document}

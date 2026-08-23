@@ -1,0 +1,168 @@
+\chapter{Abbreviations}
+\newlength{\taiubh}
+\settowidth{\taiubh}{TaiUBh} % looks like this is the widest abbreviation
+\addtolength{\taiubh}{12pt}
+\newlength{\rightcolumn}
+\setlength{\rightcolumn}{\textwidth}
+\addtolength{\rightcolumn}{-\taiubh}
+
+\newcommand{\abbrindex}[4]{%
+  \index{#1@#2|see{#3}}%
+  #2 & #3 \citep{#4} \\[0.50ex]
+}
+% \index{BAU@BĀU|see{Bṛhadāraṇyakopaniṣad}}
+% \index{BAUBh@BĀUBh|see{Bṛhadāraṇyako\-pa\-ni\-ṣa\-d\-bhā\-ṣya}}
+\section{Texts and editions}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\begin{longtable}{@{}l p{\rightcolumn}@{}}
+\abbrindex{AA}{AA}{Aṣṭādhyāyī of Pāṇini}{vasu1962ashtadhyayi} %vasu...
+% ANSS
+\abbrindex{BAU}{BĀU}{Bṛhadāraṇyako\-pa\-ni\-ṣa\-d}{bau}
+\abbrindex{BAUBh}{BĀUBh}{Bṛ\-ha\-dā\-ra\-ṇya\-ko\-pa\-ni\-ṣa\-d\-bhā\-ṣya ascribed to Śaṅkara}{bau}
+\abbrindex{BhG}{BhG}{Bhagavadgītā}{bhgbh}
+\abbrindex{BhGBh}{BhGBh}{Bhagavadgītābhāṣya ascribed to Śaṅkara}{bhgbh}
+\abbrindex{BS}{BS}{Brahmasūtra}{bsbh}
+\abbrindex{BSBh}{BSBh}{Bra\-hma\-sū\-tra\-śā\-ṅka\-ra\-bhā\-ṣya of Śaṅkara}{bsbh}
+\abbrindex{BSi}{BSi}{Brahmasiddhi of Maṇḍana Miśra}{bs}
+\abbrindex{ChU}{ChU}{Chāndogyopaniṣad}{upa2}
+\abbrindex{ChUBh}{ChUBh}{Chā\-ndo\-gyo\-pa\-ni\-ṣa\-dbhā\-ṣya ascribed to Śaṅka\-ra}{upa2}
+% CSS
+% \abbrindex{IUBh}{ĪUBh}{Īśopaniṣadbhāṣya ascribed to Śaṅkara}{} 
+% \abbrindex{IU}{ĪU}{Īśopaniṣad}{}
+\abbrindex{JS}{JS}{Jaiminisūtra a.k.a.\ Mī\-māṃ\-sā\-sū\-tra}{frauwallner:karma,js1,js1a,js2,js3,js4,js5,js6,js7}
+\abbrindex{KAS}{KAŚ}{Kauṭilyārthaśāstra}{as:kangle_ed1}
+\abbrindex{KaU}{KaU}{Kaṭhopaniṣad}{upa1} 
+\abbrindex{KaUBh}{KaUBh}{Kaṭhopaniṣadbhāṣya ascribed to Śaṅkara}{upa1} 
+\abbrindex{KeU}{KeU}{Kenopaniṣad}{upa1} 
+\abbrindex{KeUBh}{KeUBh}{Kenopaniṣadbhāṣya ascribed to Śaṅkara}{upa1} 
+% KU
+% KUPBh
+\abbrindex{Manu}{Manu}{Manusmṛti}{olivelle:manu_ed}% Olivelle 2006 
+\abbrindex{MaU}{MāU}{Māṇḍūkyopaniṣad}{upa1}
+\abbrindex{MaUBh}{MāUBh}{Mā\-ṇḍū\-kyo\-pa\-ni\-ṣa\-dbhā\-ṣya ascribed to Śa\-ṅka\-ra}{upa1}
+\abbrindex{MBh}{MBh}{Mahābhārata}{poona:mbh} 
+\abbrindex{MMK}{MMK}{Mū\-la\-ma\-dhya\-mi\-ka\-kā\-ri\-kās of Nāgārjuna}{mmk} 
+% \abbrindex{MS}{MS}{Manusmṛti???}{} 
+\abbrindex{MuU}{MuU}{Muṇḍakopaniṣad}{upa1}
+\abbrindex{MuUBh}{MuUBh}{Mu\-ṇḍa\-ko\-pa\-ni\-ṣa\-dbhā\-ṣya ascribed to Śaṅkara}{upa1} 
+\abbrindex{NBh}{NBh}{Nyāyabhāṣya}{ns}
+\abbrindex{NBhu}{NBhū}{Nyāyabhūṣaṇa of Bhā\-sa\-rva\-jña}{nbhusana} 
+% \abbrindex{NK}{NK}{Nyāya\ldots???}{}
+\abbrindex{NKd}{NKd}{Nyāyakandalī}{pdhs}
+\abbrindex{Nkn}{NKṇ}{Nyāyakaṇikā of Vācaspati Miśra}{vidhiviveka,vidhiviveka:tara,vidhiv:stern}
+\abbrindex{NM}{NM}{Nyāyamañjarī of Bhaṭṭa Jayanta}{nm:kss}
+\abbrindex{NS}{NS}{Nyāyasūtra}{ns}
+\abbrindex{NV}{NV}{Nyāyavārttika}{ns}
+\abbrindex{NVTT}{NVTṬ}{Nyā\-ya\-vā\-rtti\-ka\-tā\-tpa\-rya\-ṭī\-kā of Vācaspati Miśra}{ns}
+\abbrindex{PDhS}{PDhS}{Padārthadharmasaṅgraha}{pdhs}
+% \abbrindex{PP}{PP}{Prakaraṇapañcikā of Śālikanātha}{pp}
+\abbrindex{PaSu}{PāSū}{Pāśupatasūtra}{pasupatasutra}
+\abbrindex{PraPa}{PraPa}{Prakaraṇapañcikā}{pp}
+\abbrindex{PYS}{PYŚ}{Pātañjalayogaśāstra}{ys:anss,yvi}
+\abbrindex{PV}{PV}{Pramāṇavārttika of Dha\-rma\-kīrti}{pvv,pv:pandeya}
+\abbrindex{SBh}{ŚBh}{Śābarabhāṣya}{frauwallner:karma,js1,js1a,js2,js3,js4,js5,js6,js7}
+\abbrindex{SK}{SK}{Sāṃkhyakārikās}{yd} %yd
+\abbrindex{SRTS}{ŚRTS}{Tattvasaṃgraha of Śā\-nta\-ra\-kṣita}{ts:bbh}
+\abbrindex{SS}{SS}{Sphoṭasiddhi of Maṇḍana Miśra}{SS}
+\abbrindex{SV}{ŚV}{Ślokavārttika of Kumārila}{sv:umbeka,sv:partha,svkasika} 
+\abbrindex{TaiU}{TaiU}{Taittirīyopaniṣad}{upa1}
+\abbrindex{TaiUBh}{TaiUBh}{Tai\-tti\-rī\-yo\-pa\-ni\-ṣa\-dbhā\-ṣya ascribed to Śaṅkara}{upa1}
+\abbrindex{TS}{TS}{Taittirīyasaṃhitā}{weber:tais}
+\abbrindex{TSP}{TSP}{Tattvasaṃgrahapañjikā of Kamalaśīla}{ts:bbh}
+%\abbrindex{TP}{TP}{???}{}
+\abbrindex{TV}{TV}{Tattvavaiśāradī (a commentary on the Yo\-ga\-bhā\-ṣya) of Vā\-ca\-s\-pa\-ti Miśra}{ys:anss,yvi}
+\abbrindex{Upad}{Upad}{Upadeśasāhasrī}{mayeda:upad}
+\abbrindex{VidhiV}{VidhiV}{Vidhiviveka of Maṇḍana Miśra}{vidhiviveka,vidhiviveka:tara,vidhiv:stern}
+\abbrindex{VMBh}{VMBh}{Mahābhāṣya of Patañjali}{mbh1,mbh3}
+\abbrindex{VP}{VP}{Vākyapadīya of Bhartṛhari}{rau:text,rau:index,iyer:vp2text} 
+\abbrindex{VS}{VS}{Vaiśeṣikasūtra}{vs}
+\abbrindex{YBh}{YBh}{Yogabhāṣya}{ys:anss,yvi,maas:2006}
+\abbrindex{YD}{YD}{Yuktidīpikā}{wezler:yd}
+\abbrindex{YS}{YS}{Yogasūtra}{ys:anss,yvi,maas:2006}
+\abbrindex{YV}{YV}{Yogavārttika of Vi\-jñā\-na\-bhi\-kṣu}{rukmani:yvarttika}
+\abbrindex{YVi}{YVi}{Pātañjalayogaśāstravivaraṇa}{yvi}
+\index{Jayamangala@Jayamaṅgalā|seealso{Sāṃkhyajayamaṅgalā}}
+\index{Mimamsa@Mīmāṃsā|seealso{Mīmāṃsaka}}
+\index{Samkhyajayamangala@Sāṃkhyajayamaṅgalā|seealso{Jayamaṅgalā}}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+% \abbrindex{}{}
+\end{longtable}
+
+\section{Sigla and Others}
+See pp.~\pageref{sec:symbols} for details.
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\begin{longtable}{@{}ll@{}}
+	MS & manuscript \\
+	em. & emendation \\
+	conj. & conjecture \\
+	\Tm & Trivandrum manuscript \\
+	\Tmac & ditto before correction \\
+	\Tmpc & ditto after correction \\
+	\Td & A transcript of the Trivandrum manuscript \\
+	\Tdac & ditto before correction \\
+	\Tdpc & ditto after correction \\
+	T & A reading common in \Tm\ and \Td \\
+	L & Lahore manuscript \\
+	\Lac & ditto before correction \\
+	\Lpc & ditto after correction \\
+	M & Madras Government Oriental Manuscript Library manuscript \\
+	\Mac & ditto before correction \\
+	\Mpc & ditto after correction \\
+	A & Adyar Library manuscript \\
+	\Aac & ditto before correction \\
+	\Apc & ditto after correction \\
+	\Me & 1952 edition of the YVi \\
+	$\Sigma$ & all the witnesses, including the 1952 edition \\
+	\mms & the following text is lost in \Tm \\
+	\kern 5.3pt \mme & the preceding text is lost in \Tm\\
+	\raisebox{-0.5ex}{\mds} & the following text is reported missing in \Td \\
+	\raisebox{-0.5ex}{\kern 5.3pt \mde} & the preceding text is reported missing in \Td \\
+	\dag & the enclosed text is suspected to be corrupt \\
+	\begin{uncertain}{\dn क}\end{uncertain} & (text in a lighter shade) uncertain text \\
+	\ldots & in critical text, suspected loss of text \\[0pt]
+	[\mist{1}] & physically lost sign in a manuscript \\
+	\mist{1} & a sign indicated as lost in the exemplar \\
+	\hlg{{\dn क}} & highly illegible but ascertainable as {\dn क} \\
+	\ilg & an illegible (but not lost) sign \\
+	\ccs {\dn क}\cce & cancelled {\dn क} \\
+	\ins{\dn क}\ine & inserted {\dn क} \\
+	\open & space left by scribe
+\end{longtable}
+
+% \begin{description}
+% 	\item[MS]{manuscript}
+% 	\item[em.]{emendation}
+% 	\item[conj.]{conjecture}
+% 	\item[\Tm]{Trivandrum manuscript}
+% 	\item[\Tmac]{Trivandrum manuscript before correction}
+% 	\item[\Tmpc]{Trivandrum manuscript after correction}
+% 	\item[Td]{A transcript of the Trivandrum manuscript}
+% 	\item[\Tdac]{A transcript of the Trivandrum manuscript before correction}
+% 	\item[\Tdpc]{A transcript of the Trivandrum manuscript after correction}
+% 	\item[T]{A reading common in \Tm\ and \Td}
+% 	\item[L]{Lahore manuscript}
+% 	\item[\Lac]{Lahore manuscript before correction}
+% 	\item[\Lpc]{Lahore manuscript after correction}
+% 	\item[M]{Madras Government Oriental Manuscript Library manuscript}
+% 	\item[\Mac]{Madras Government Oriental Manuscript Library manuscript before correction}
+% 	\item[\Mpc]{Madras Government Oriental Manuscript Library manuscript after correction}
+% 	\item[A]{Adyar Library manuscript}
+% 	\item[\Aac]{Adyar Library manuscript before correction}
+% 	\item[\Apc]{Adyar Library manuscript after correction}
+% 	\item[\Me]{1952 edition of the YVi}
+% 	% \item[L]{}
+% 	% \item[L]{}
+% 	% \item[L]{}
+% 	% \item[L]{}
+% \end{description}

@@ -1,0 +1,61 @@
+%!TEX TS-program = xelatex -output-driver="xdvipdfmx -q -E" "$1"
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,article,10pt]{memoir}
+\usepackage[xetex]{graphicx,color}
+\usepackage{natbib}
+\usepackage[para*,Aplain,Bpara,Cplain,Dplain,Eplain,addpageno]{ednotes}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{american} % apperantly for polyglossia
+\setotherlanguage{sanskrit}   % ditto
+\newfontfamily\sanskritfont[Scale=1.06, Mapping=tex-text]{Devanagari MT} % the scaling
+\catcode`\­=\active\def­{\-} % unicode discrete hyphen
+%\usepackage{utf8dingbats}
+\usepackage{ifthen}
+\usepackage{mparhack} % to have \marginpar at the correct side.
+% \usepackage{ellipsis}
+% \usepackage{namesandterms}
+\usepackage{hyperref} % breaks \ldots if loaded before ellipsis; 
+\usepackage{ellipsis} % \ldots does not work without this; has to be placed after hyperref...
+\usepackage[usenames]{xcolor}
+\usepackage{crited}
+
+% Memoir thing
+\setsecnumdepth{subparagraph}
+\maxsecnumdepth{subparagraph}
+\headstyles{komalike}
+
+% \newcommand{\st}[1]{\textbf{\large#1}}
+% \newcommand{\bht}[1]{\textbf{#1}}
+
+% see TeXBook p.356
+\def\myraggedright{%
+  %\hyphenpenalty=-100
+  \rightskip=0pt plus1em
+  \spaceskip=.3333em \xspaceskip=.5em\relax
+}
+\catcode`\|=\active\def|{\rule{1pt}{0pt}$\mid$}
+\newcommand{\pratika}[1]{\marginpar{\myraggedright{\footnotesize{\emph{#1}\ldots}}}}
+
+
+%\newenvironment{uncertain}{\special{x:textcolor=666666}}{\special{x:textcolor=000000}}
+
+
+% this is used throughout this trl.  I can't bother reinprementing it for now.  So, it's an empty command.
+\newcommand{\refm}[1]{}
+% \bibliographystyle{kengo}
+% \bibpunct[:]{(}{)}{,}{a}{}{,}
+
+\author{Kengo Harimoto}
+\title{A Partial Critical Edition of Pātañjalayogaśāstravivaraṇa 1.7}
+% \date{21 December 2013 \\ at Sanjokaikan, University of Tokyo}
+
+\begin{document}
+\maketitle
+% \chapter{Sigla}
+% \input{sigla}
+
+% \chapter{Edition}
+\input{text07}
+
+% \end{document}

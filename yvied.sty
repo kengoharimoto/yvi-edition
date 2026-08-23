@@ -1,0 +1,579 @@
+% I'm glad these macros survived... But I'm changing the names because
+% they were extremely confusing.
+% some macros I need.
+%
+
+% memoir document class does not support \rm
+\newcommand{\cm}{\rmfamily}
+
+\newcommand{\dl}{$\lbrack\!\lbrack$}     % Sign deleted char., etc.  See TeXbook p.437.
+\newcommand{\dr}{$\rbrack\!\rbrack$}     % Sign deleted char., etc.  See TeXbook p.437.
+
+% \newcommand{\il}{{\cm \`{}}} % added characters left
+% \newcommand{\ir}{{\cm \'{}}} % added characters right
+% \newcommand{\il}{{\cm `}} % added characters left
+\newlength{\nwidth}
+\settowidth{\nwidth}{n}
+\newcommand{\il}{{\cm \rule{\nwidth}{0pt}\symbol{"0300}}} % added characters left
+\newcommand{\ir}{{\cm ´}} % added characters right
+
+% Start of Tm missing.
+\def\mms{%\hskip 1.1pt
+  \vrule width0.3pt height.2ex   depth.4ex
+  \vrule width5pt   height-.37ex depth.4ex 
+  \vrule width-5.3pt
+%  \hskip .8pt
+}
+
+% End of Tm missing.
+\def\mme{%\hskip 1.1pt
+  \vrule width-5.3pt
+  \vrule width5pt   height-.37ex depth.4ex
+  \vrule width0.3pt height.2ex   depth.4ex
+%  \hskip .8pt
+}
+
+% Start of Td missing.
+\def\mds{%\hskip 1.1pt
+  \vrule width0.3pt height1.6ex depth-1.0ex
+  \vrule width5pt   height1.6ex depth-1.57ex 
+  \vrule width-5.3pt
+%  \hskip .8pt
+}
+
+% End of Td missing.
+\def\mde{%\hskip 1.1pt
+  \vrule width-5.3pt
+  \vrule width5pt   height1.6ex depth-1.57ex
+  \vrule width0.3pt height1.6ex depth-1.0ex
+%  \hskip .8pt
+}
+    
+% Start of T (both Tm and Td) missing
+\def\mts{%\hskip 1.1pt
+  \vrule width0.3pt height.2ex depth.4ex
+  \vrule width5pt height-.37ex depth.4ex 
+  \vrule width-5.3pt
+  \vrule width0.3pt height1.6ex depth-1.0ex
+  \vrule width5pt height1.6ex depth-1.57ex 
+  \vrule width-5.3pt
+%  \hskip .8pt
+}
+
+% End of T (both Tm and Td) missing
+\def\mte{%\hskip .6pt
+  \vrule width-5.3pt
+  \vrule width5pt height-.37ex depth.4ex
+  \vrule width0.3pt height.2ex depth.4ex
+  \vrule width-5.3pt
+  \vrule width5pt height1.6ex depth-1.57ex
+  \vrule width0.3pt height1.6ex depth-1.0ex
+%  \hskip .8pt
+}
+% I am sick and tired of {{\skt :}}
+%\def\sf{{}\skt :}
+%\def\sfb{{}\sktbs :}
+\def\sf{\nobreak\hskip 0pt\relax}
+
+\newcommand{\quoteo}{`}
+\newcommand{\quotec}{'}
+%\newcommand{\mula}[1]{{\dnb #1}}
+\newcommand{\mula}[1]{\ifthenelse%
+ {\equal{\@inlemma}{NO}}% if
+ {{\dnb #1}}% then
+ {#1}} % else
+%\newcommand{\str}[1]{\bigskip {\Large #1} \bigskip}
+\newcommand{\str}[1]{\ifthenelse%
+  {\equal{\@inlemma}{NO}}% if 
+  {\rule{0pt}{20pt}{\Large #1}\rule[-8pt]{0pt}{0pt}}% then 
+  {#1}} % else
+
+% \newenvironment{uncertain}{\special{x:textcolor=666666}}{\special{x:textcolor=000000}}
+% \newenvironment{uncertain}{\special{color rgb 0.5 0.5 0.5}}{\special{color rgb 0.0 0.0 0.0}}
+\definecolor{light-gray}{gray}{0.50}
+\newcommand{\uncertain}{\color{light-gray}}
+% ---------------------- ednotes related ----------------------------
+%
+% For all the notes, I would like them to be printed in \small...
+%\renewcommand{\notefmt}[1]{{\small #1}}
+%
+% I wouldn't like to put these here.  Should go to a .sty file soon.
+% \ExtraParaSkip{3pt}
+\setlength{\skip\footinsA}{5.2pt plus 2pt minus 2pt}
+% \setlength{\skip\footinsB}{5.2pt plus 1pt minus 1pt}
+% \setlength{\skip\footinsC}{5.2pt plus 1pt minus 1pt}
+% \setlength{\skip\footinsD}{5.2pt plus 1pt minus 1pt}
+% \setlength{\skip\footinsE}{5.2pt plus 1pt minus 1pt}
+
+% page and line should be separated by a comma, not a dot
+\renewcommand*{\pageandline}[2]{#1,#2} % #1 page, #2 line.
+
+% This should apply globally.
+\newcommand{\kundala}{} % this is empty originally...
+\newcommand{\defkundala}{\renewcommand{\kundala}{{\dn ॰}}}
+\newcommand{\undefkundala}{\renewcommand{\kundala}{}}
+\newcommand{\appsep}{\thinspace]\vrule width .25em height 0pt depth 0pt}
+%\newcommand{\appsep}{\thinspace]\hskip .25em\relax}
+\renewcommand*{\lemmaellipsis}{{\cm \textsymmdots}}
+
+% This is a freaky hack.  What it means is that by default, all the lemma are supposed to have a kundala, but since the kundala is initially defined as empty, it doesn't show up.  Only when an appropriate \var... command is used, it is defined and shows up.
+\renewcommand{\lemmafmt}[1]{\kundala#1\appsep}
+
+% I think this should apply universally
+%\renewcommand*{\linewithpage}[1]{\pageref{#1},\ref{#1}}
+
+% Anote is for regular variants.
+\newcommand*{\var}{\Anote}
+%\newcommand{\vrt}[3]{\Anote{\dn #1}{{\cm #2, } #3}}
+\newcommand{\vrt}[3]{\Anote{#1}{{\cm #2}, #3}}
+\newcommand{\varl}[1]{\Anotelabel{#1}}
+\newcommand{\vnote}[2]{#1, {\dn #2}}
+\newcommand{\reading}[2]{{\dn #1} {\cm #2}}
+\newcommand{\rdg}[2]{{\dn #1}\ {\cm #2}}
+
+% When I need elipses in the lemma
+%\newcommand*{\varsm}[2]{\sf\Anote{#1\<<{\skt \ZM{FTV}\ZS{20}}>\>}{#2}\sf}
+%\newcommand*{\varmm}[2]{\sf\defkundala\Anote{#1\<<{\skt \ZM{FTV}\ZS{20}}>\>}{#2}\sf\undekundala}
+%\newcommand*{\varms}[2]{\sf\defkundala\Anote{#1}{#2}\sf\undefkundala}
+% \newcommand*{\varsm}[2]{\Anote{#1\<<॰>\>}{#2}}
+% \newcommand*{\vrtsm}[3]{\Anote{#1\<<॰>\>}{{\cm #2}, #3}\-}
+% \newcommand*{\varmm}[2]{\-\defkundala\Anote{#1\<<॰>\>}{#2}\undefkundala\-}
+% \newcommand*{\vrtmm}[3]{\-\defkundala\Anote{#1\<<॰>\>}{{\cm #2}, #3}\undefkundala\-}
+% \newcommand*{\varms}[2]{\-\defkundala\Anote{#1}{#2}\undefkundala}
+% \newcommand*{\vrtms}[3]{\-\defkundala\Anote{\dn #1}{{\cm #2}, #3}\undefkundala}
+
+% a newer version without discret hyphens;
+\newcommand*{\varsm}[2]{\Anote{#1\<<॰>\>}{#2}}
+\newcommand*{\vrtsm}[3]{\Anote{#1\<<॰>\>}{{\cm #2}, #3}}
+\newcommand*{\varmm}[2]{\defkundala\Anote{#1\<<॰>\>}{#2}\undefkundala}
+\newcommand*{\vrtmm}[3]{\defkundala\Anote{#1\<<॰>\>}{{\cm #2}, #3}\undefkundala}
+\newcommand*{\varms}[2]{\defkundala\Anote{#1}{#2}\undefkundala}
+\newcommand*{\vrtms}[3]{\defkundala\Anote{\dn #1}{{\cm #2}, #3}\undefkundala}
+
+\newcommand*{\Anotefmt}{% 
+% \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
+% \renewcommand*{\differentlines}[2]{\linesfmt{##1\textendash##2}}% 
+\renewcommand*{\linesfmt}[1]{\textbf{##1}\hskip 0.3em\relax%
+  \hspace*{0pt}%
+}%
+% \renewcommand*{\repeatref}[1]{\ref{#1}}% E.g., ... 
+% % \renewcommand*{\repeatref}[1]{\textnormal{/}}% ... instead. 
+% \renewcommand*{\repeatref}[1]{$\bullet$}% ... instead. 
+% \renewcommand{\lemmafmt}[1]{##1\thinspace]\enskip}% 
+\renewcommand{\lemmafmt}[1]{\kundala{\dn%\hyphenpenalty-100%
+ ##1}\thinspace]\rule{0.10em}{0pt}}%
+% \renewcommand*{\lemmaellipsis}{\textsymmdots}% 
+% \renewcommand*{\lemmaellipsis}{{\cm \textsymmdots}}% 
+% \renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt ##1}% 
+\renewcommand{\notefmt}[1]{\cm ##1}% 
+} 
+
+% Bnote becomes the mula text.
+%% Bnote is for verbose editorial notes... which is not being used.
+%\newcommand*{\la}{\Bnote}
+%\newcommand{\lal}[1]{\Bnotelabel{#1}}
+
+% Cnote is used for testimonia.
+\newcommand*{\tst}{\Cnote}
+\newcommand{\tstl}[1]{\linelabel{#1}\Cnotelabel{#1}}
+\newcommand*{\tstsm}[2]{\Cnote{#1\<<॰>\>}{#2}}
+\newcommand*{\tstmm}[2]{\defkundala\Cnote{#1\<<॰>\>}{#2}\undefkundala}
+\newcommand*{\tstms}[2]{\defkundala\Cnote{#1}{#2}\undefkundala}
+% testimonia with label and lemma. needed for lemmas that go over other notes.
+\newcommand*{\tstwll}[2]{%\linelabel{#1}
+  \Cnotelabel{#1}\pause{#1}<{\dn #2}>}
+
+% The changes include the indentation (\kern, gasp) and spacing (may not have much effect any more).
+\newcommand*{\Cnotefmt}{% 
+% \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
+% \renewcommand*{\differentlines}[2]{\linesfmt{##1\textendash##2}}% 
+\renewcommand*{\linesfmt}[1]{%\kern -2.0em %
+\textbf{##1}%\enspace
+  \kern .25em
+}% 
+% \renewcommand*{\repeatref}[1]{\ref{#1}}% E.g., ... 
+% % \renewcommand*{\repeatref}[1]{\textnormal{/}}% ... instead. 
+% \renewcommand*{\repeatref}[1]{$\bullet$}% ... instead. 
+% \renewcommand{\lemmafmt}[1]{##1\thinspace]\enskip}% 
+%\renewcommand{\lemmafmt}[1]{\dn ##1\thinspace]\enskip}%
+% The following is a dirty hack to suppress \str.
+\renewcommand{\lemmafmt}[1]{%
+  \def\@inlemma{YES}
+  \let\Large=\normalsize
+  \kundala\dn ##1\thinspace]\enskip % actual output
+  \def\@inlemma{NO}}%
+% \renewcommand*{\lemmaellipsis}{\textsymmdots}% 
+% \renewcommand*{\lemmaellipsis}{{\cm \textsymmdots}}% 
+\renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt ##1\rule[-1.666ex]{0pt}{1.00ex}}% 
+}
+
+
+%% Dnote is for ... commentary.
+\newcommand{\comm}{\Enote} % hardly be used.
+\newcommand{\comml}[1]{\Enotelabel{#1}} % will hardly be used.
+% these notes actually refers to the end notes.
+\newcommand{\com}[2]{\Enotelabel{#1}\pause{#1}<{\dn #2}>}
+\newcommand*{\come}[1]{\dotfill \textdb{☞} \textbf{\ref{#1note}}\,(\pageref{#1note})}
+\newcommand*{\Enotefmt}{% 
+% \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
+% \renewcommand*{\differentlines}[2]{\linesfmt{##1\textendash##2}}% 
+\renewcommand*{\linesfmt}[1]{%\kern -2.0em 
+  \textbf{##1}\enspace}% 
+% \renewcommand*{\repeatref}[1]{\ref{#1}}% E.g., ... 
+% % \renewcommand*{\repeatref}[1]{\textnormal{/}}% ... instead. 
+% \renewcommand*{\repeatref}[1]{$\bullet$}% ... instead. 
+% \renewcommand{\lemmafmt}[1]{##1\thinspace]\enskip}% 
+\renewcommand{\lemmafmt}[1]{\dn ##1\thinspace]\enskip}%
+% \renewcommand*{\lemmaellipsis}{\textsymmdots}% 
+% \renewcommand*{\lemmaellipsis}{{\cm \textsymmdots}}% 
+\renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt ##1}% 
+}
+
+\newcommand{\enote}[1]{\item\label{#1note}}
+
+% Dnote is used for the Bhasya text.
+\newcommand{\mll}[1]{\Dnotelabel{#1}\pause{#1}}
+\newcommand*{\Dnotefmt}{% 
+% \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
+% \renewcommand*{\differentlines}[2]{\linesfmt{##1\textendash##2}}% 
+% \renewcommand*{\linesfmt}[1]{\textbf{##1}\enspace}% 
+%\renewcommand*{\linesfmt}[1]{\kern -2.0em \textbf{##1}\enspace}% 
+% \renewcommand*{\repeatref}[1]{\ref{#1}}% E.g., ... 
+% % \renewcommand*{\repeatref}[1]{\textnormal{/}}% ... instead. 
+  \renewcommand{\lemmafmt}[1]{\enskip}% 
+% \renewcommand{\lemmafmt}[1]{##1\thinspace \enskip}% No bracket...
+% \renewcommand*{\lemmaellipsis}{\textsymmdots}% 
+% \renewcommand{\notefmt}[1]{##1}% 
+\renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt {\normalsize  ##1}\rule[-1.37ex]{0pt}{1.00ex}}% 
+} 
+
+% I'd like to have an endnote.  So, I'm modifying \donote{}
+% At this moment, this is not working...
+\newcommand{\mynote}[2]{\donote{#1}{#2}}
+
+% To be used in the endnotes:
+%\newcommand{\beginend}[1]{\pageref{#1},\ref{#1}--\pageref{#1_end},\ref{#1_end}}
+\newcommand{\beginend}[1]{XXX--YYY}
+
+% experimental. no more used
+%\newcommand{\bhasyapart}[1]{\Enote{{}}{#1}}
+
+\newcommand{\pac}[1]{\raisebox{0.9ex}{\scriptsize\emph{#1}}}
+% abbrev. etc.
+\newcommand{\Tm}{{\cm T\kern -0.15em\raisebox{-.4ex}{\scriptsize m}}}
+\newcommand{\Td}{\cm T\kern -0.15em\raisebox{-.4ex}{\scriptsize d}}
+\newcommand{\Tdx}{T\kern -0.15em\raisebox{-.4ex}{\scriptsize d}}
+\newcommand{\Tmac}{{\cm\Tm\kern -0.25em\pac{ac}}}
+\newcommand{\Tmpc}{{\cm\Tm\kern -0.10em\pac{pc}}}
+\newcommand{\Tdac}{{\cm\Td\kern -0.25em\pac{ac}}}
+\newcommand{\Tdpc}{{\cm\Td\kern -0.10em\pac{pc}}}
+\newcommand{\Lac}{{\cm L\kern -0.15em\pac{ac}}}
+\newcommand{\Lpc}{{\cm L\pac{pc}}}
+\newcommand{\Mac}{{\cm M\pac{ac}}}
+\newcommand{\Mpc}{{\cm M\pac{pc}}}
+\newcommand{\Aac}{{\cm A\pac{ac}}}
+\newcommand{\Apc}{{\cm A\pac{pc}}}
+
+% \newcommand{\Tm}{{\cm Tm}}
+% \newcommand{\Td}{{\cm Td}}
+\newcommand{\LMA}{{\cm LMA}}
+\newcommand{\MAE}{{\cm MA\Me}}
+\newcommand{\LMpcAE}{{\cm LM$^{pc}$A\Me}}
+% \newcommand{\Me}{M\kern -0.1em\raisebox{-.4ex}{\scriptsize e}}
+% \newcommand{\Me}{\emph{E}}
+\newcommand{\Me}{{\stix ℰ}}
+
+\newcommand{\conj}{{\cm conj\@.}}
+
+% Things used in the apparatus...
+%
+\newcommand{\ccs}{$\langle$} % Left angle bracket for canceled signs.
+\newcommand{\cce}{$\rangle$} % Right angle bracket for canceled signs.
+
+% In addtion, I need signs for insertion...
+% \newcommand{\ins}{\textrm{\`{}}} % these original did not work with laitn modern 20140412
+% \newcommand{\ine}{\textrm{\'{}}}
+\newcommand{\ins}{\textrm{»}}
+\newcommand{\ine}{\textrm{«}}
+
+% And those that are hard to read...
+%\newcommand{\hlg}{\kern 2pt \rule[-2pt]{4pt}{.4pt}\kern -6pt} % first version
+\newlength{\cw}%
+\newlength{\y}%
+\newlength{\z}%
+\newcommand{\hlg}[1]{%
+%  \newlength{\cw}%
+%  \newlength{\y}%
+%  \newlength{\z}%
+  \settowidth{\cw}{#1}%
+  \setlength{\y}{0.5\cw}%
+  \addtolength{\y}{-2pt}%
+  \setlength{\z}{\y}%
+  \addtolength{\z}{4pt}%
+  \hspace{\y}\rule[-2pt]{4pt}{.4pt}\kern -\z #1} % second version
+
+
+% You don't want to contaminate the source with bunch of dots, do you?
+% This is for putting appropriate number of dots inside brackets.
+\newcount\n
+\def\lost#1{\n=1
+  {\textrm [\enskip$\cdot$}%
+  \loop\ifnum\n<#1 \advance\n by1
+%  {\textrm .\enskip}\repeat{\textrm ]}}
+  \enskip$\cdot$\repeat{\textrm~]}}
+
+% Similarly, this is to be used for Devanagari transcripts.
+\newcount\n
+\def\mist#1{\enskip$\cdot$\n=1
+  \loop\ifnum\n<#1 \advance\n by1
+%  {\textrm .\enskip}\repeat}
+  \enskip$\cdot$\repeat\enskip}
+
+% Minor variant in a variant is enclosed in braces:
+\newcommand{\vv}[2]{\{{\dn #1} {\cm #2}\}}
+
+% Would be nice to have @ (sanskrit elipses symbol) in the
+% appratus. \ZM{FTV}\ZS{20} is `@' in the source. {\skt :} is the tiny
+% spacer.  These are used like \var{text in lemma}\<<\selm>{not in 
+% lemma}\>{again in lemma}{apparatus}
+\newcommand{\sel}{ {\cm\textsymmdots\ }}
+%\newcommand{\selm}{{\skt \ZM{FTV}\ZS{20}}{\cm\textsymmdots\ }{\skt :}}
+%\newcommand{\selmmm}{{\skt \ZM{FTV}\ZS{20}}{\cm\textsymmdots\ }{\skt :}}
+%\newcommand{\selmm}{{\skt \ZM{FTV}\ZS{20}}{\cm\textsymmdots\ }{\skt
+%    \ZM{FTV}\ZS{20}:}}
+\newcommand{\selm}{{\dn ॰}{\cm\textsymmdots\ }}
+\newcommand{\selmmm}{{\dn ॰}{\cm\textsymmdots\ }}
+\newcommand{\selmm}{{\dn  ॰}{\cm\textsymmdots}{\dn ॰}}
+
+% illegible character
+\newcommand{\ilg}{$\ast$}
+
+% crux symbol
+\newcommand{\crux}{$\dagger$}
+% omission
+\newcommand{\om}{{\cm om.}}
+
+% Sigma
+\newcommand{\all}{$\Sigma$}
+
+% need something to signal spaces in manuscripts
+\newcommand{\open}{$\cup$}
+
+%%%% Those requried in the Introduction 
+\newcommand{\pysv}{P\=a\-ta\-\~nja\-la\-yo\-ga\-\'s\=a\-stra\-vi\-va\-ra\d na}
+
+% I don't know what was behind this.  This is from skt.sty
+% \emergencyskip business was hurting so much...  So, I undef'ed the
+% value and I will use the setspace package to have desirable
+% linespacing in the body.
+%
+% The original was very much tolerent, which I don't think was very
+% nice.
+%
+% The original seems to have some recursion in it.  I still don't know
+% what is causing that werid problem.  My current solution is to give
+% \baselineskip a definite value like below.  Seems to be working.
+%\def\sktcommon{%\tolerance=1000%
+%              \pretolerance=1000%
+%              \emergencystretch=.2\hsize%
+%              \baselineskip 1.333\baselineskip
+%              \baselineskip 17.5pt
+%}
+
+% The skip between the body and footnotes does not seem to be big
+% enough, nor does it seem flexible enough.
+%\addtolength{\skip\footins}{2pt plus 1pt}
+%\addtolength{\skip\footins}{2pt}
+
+% Does this solve the freaky problem with para foot format?
+
+% Dimensions for the edition part.
+% The f***king skt package does something really stupid.  It doesn't
+% interact with other packages very well.  Why am I using it?  So,
+% here is what I had to do with \baselinestreth.
+
+% I don't know where this really should go... The depth of the fonts obviously differ.  When a note does not contain Devanagari on a line, the lineskips get messed up.
+\newlength{\dnheight}
+\newlength{\dndepth}
+\settoheight{\dnheight}{{\dn अ}}
+\settodepth{\dndepth}{{\dn अ}}
+\newcommand{\dnfiller}{\rule[-\dndepth]{0pt}{\dnheight}}
+
+
+% This should be useful in the endnotes and elsewhere where I have to
+% refer to page and the line.
+\newcommand{\pageline}[1]{\pageref{#1},\lineref{#1}}
+
+% This one formats the endnotes.
+% the first one causes a weird memory problem.
+%\newcommand{\enote}[1]\{\medskip\noindent{}\textbf{\beginend{#1}}}
+%\newcommand{\enote}[2]{\medskip\noindent{}\textbf{\pageref{#1},\lineref{#1}--\pageref{#2},\lineref{#2}}}
+\newcommand{\firstref}{}
+\newcommand{\secondref}{}
+
+% There is something really funky about how the lineno.sty works when I try to access the line number reference.  Simply put, I cannot use \lineref in macros. I wanted to have only one reference when the part I'm referring to is on one line.  It just doesn't work.
+%\newcommand{\enote}[2]{%
+% \ifthenelse{% test
+%   \equal{\vpagelineref{#1}}{\vpagelineref{#2}}
+%  }{ % then
+%   \paragraph{\pageref{#1},\lineref{#1}}%
+%  }{ % else
+%   \paragraph{really? \pageref{#1},\lineref{#1}--\pageref{#2},\lineref{#2}}%
+%  }
+%}
+%
+%\newcommand{\entl}{\linelabel}
+%\newcommand{\enote}{\paragraph{\pageref{#1},\lineref{#1}}}
+
+% I can't believe this is not a standard...
+\newcommand{\fnref}[1]{~(\ref{#1})}
+
+% This is to be used in the apparatus and elsewhere to signify the symbols that were removed (or marked to be removed) in a MS.
+
+% first the beginning (legacy macros.  should be depreted)
+\newcommand{\db}{[\kern -.2 em [}
+% and the end
+\newcommand{\de}{]\kern -.2 em ]}
+
+% aren't you tired of typing the same thing over and over again?
+%\newcommand{\see}[1]{section~\ref{#1} on page~\pageref{#1}}
+\newcommand{\sees}[1]{section~\ref{#1} on pages~\pageref{#1} ff}
+\newcommand{\seenote}[1]{note~\ref{#1} on page~\pageref{#1}}
+% \newcommand{\seepl}[1]{p.~\pageref{#1}, l.~\lineref{#1}}
+\newcommand{\seepl}[1]{p.~\pageref{#1}}
+
+% para style fottnote does not work if the lemma goes beyond paragraph boundary.
+% as such, I have to define a fake paragraph marker.  The value of the height of 
+% the \rule has to be investigated.  It appears that xetex or the devanagari 
+% font adds some extra space (1 pt?) at the end of a paragraph, which is 
+% undesirable.  Eventually I might have to fiddle with \parskip.
+
+% So, when I need to make an apparatus that spans more than one paragraph, I 
+% have to use this \fakepar.  Typically it would be 
+%
+%  \varl{LABEL}\pause{LABEL}<SUBSTITUTELEMMA>text text text text\fakepar
+%  %
+%  more text in another paragraph\resume{LABEL}\donote{LABEL}{the apparatus}
+%
+% what a mess!
+
+% \newcommand{\fakepar}{\\ \rule[0.876\baselineskip]{\parindent}{\parskip}}
+\newcommand{\fakepar}{\\ \rule[0.776\baselineskip]{\parindent}{\parskip}}
+
+% There is a bug in Devanagari MT.
+% for bold
+\newcommand{\kleb}{\XeTeXglyph 66 \XeTeXglyph 353 \kern -.35em \XeTeXglyph 106 \kern .06em}
+% for regular
+\newcommand{\kle}{\XeTeXglyph 66 \XeTeXglyph 353 \kern -.35em \XeTeXglyph 106 \kern .065em}
+
+\newcommand{\kti}{\XeTeXglyph 101 \XeTeXglyph 261}
+
+\newcommand{\ktya}{\XeTeXglyph 175 \XeTeXglyph 252 \XeTeXglyph 91}
+
+% This is for Xe(La)TeX.  When roman and DN were mixed, without the following, the line spacing became garbled.
+%\lineskiplimit=-10000pt
+%\lineskiplimit=-10pt
+
+% Start with \@inlemma = NO
+\def\@inlemma{NO}
+
+\newcommand{\spacefiddle}{\hskip .5em plus .2em minus .2em\relax}
+
+% something is wrong with Devanagari MT on Mavericks
+\newlength{\aawidth}
+\settowidth{\aawidth}{{\dn ा}}
+% \newcommand{\fubar}{\kern \aawidth}
+\newcommand{\fubar}{\kern 0.14em}
+\newcommand{\barfu}{\kern -0.0\aawidth}
+\newlength{\ahwidth}
+\settowidth{\ahwidth}{{\dn ः}}
+\newcommand{\fubah}{\kern \ahwidth}
+
+% instead of simple ((, )), [[, ]]
+\newcommand{\edl}{(\kern -0.25em (}
+\newcommand{\edr}{)\kern -0.25em )}
+\newcommand{\eil}{[\kern -0.25em [}
+\newcommand{\eir}{]\kern -0.25em ]}
+
+% I need to adjust Devanagari paragraphs' hyphnation pattern sometimes
+\newenvironment{messwithp}[2]{%
+	\tolerance=#1%
+	\emergencystretch=#2%
+}%
+{%
+	\tolerance=200
+	\emergencystretch=0pt
+}
+
+% Originally \pratika was used to display the first few words of the text in the beginning of each paragraph in the translation.
+\newcommand{\pratika}[1]{\marginpar{\myraggedright{\footnotesize{\emph{#1}\ldots}}}}
+
+% I think I should have an easier way to label the beginning and end of a part of the text. This is intended to work with \pratikap
+\newcommand{\llbl}[1]{\linelabel{#1}\hypertarget{hr#1}{}}
+
+%% a new version with page and line references 20140507
+% Let us prepare a counter for the entire document
+\newcounter{mycount}
+
+% Insert pratikap{27_1}, etc., in the translation part
+\newcommand{\pratikap}[1]{%
+	% \thepage is not guarranteed to compute 
+	\label{mylabel\themycount}%
+	\ifthenelse{%
+	  \isodd{%
+	    \pageref{mylabel\themycount}%
+	  }%
+	} % then
+	{\marginpar{\myraggedright{\hyperlink{hr#1}{\scriptsize{\pageref{#1},\lineref{#1}}}}}}%
+	% else
+	{\marginpar{\myraggedright{\hyperlink{hr#1}{\scriptsize{\hfill\pageref{#1},\lineref{#1}}}}}}%
+	% endif
+	\stepcounter{mycount}%
+}
+
+\newcommand{\reftoeditionpar}[1]{%
+	\hyperlink{hr#1}{[\pageref{#1},\lineref{#1}]}%
+}
+% so that I don't have to type numbers, assuming the same number of labels and referenes exist. This didn't quite work. Deprecated.
+\newcounter{editionpar}
+\newcommand{\makenewplabel}{%
+  \linelabel{paranum\theeditionpar}%
+  \stepcounter{editionpar}%
+  \label{nparanum\theeditionpar}%
+}
+
+\newcommand{\reseteditionparcounter}{%
+  \setcounter{editionpar}{0}
+  \stepcounter{editionpar}
+}
+
+\newcommand{\pratikapx}{%
+	\label{mylabel\themycount}%
+	\ifthenelse{%
+	  \isodd{\pageref{mylabel\themycount}}}{%
+	  \marginpar{%
+	    \myraggedright{%
+	      \scriptsize{%
+	        \pageref{nparanum\theeditionpar},%
+			\lineref{paranum\theeditionpar}%
+		  }%
+		}%
+	  }%
+	}%
+	{%
+	  \marginpar{%
+	    \myraggedright{%
+		  \scriptsize{%
+		    \hfill%
+			\pageref{nparanum\theeditionpar},%
+			\lineref{paranum\theeditionpar}%
+		  }%
+		}%
+	  }%
+	}%
+	\stepcounter{mycount}%
+	\stepcounter{editionpar}
+}
+
+% Just a simple pair of \label and \pageref does not produce a link to the page where the \label is but to the beginning of the section. Memoir correctly produces the page number to typeset but the link hyperref creates does not.
+\newcommand{\labelh}[1]{\phantomsection\label{#1}}

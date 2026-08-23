@@ -1,0 +1,59 @@
+% This file is used in conjunction with XeLaTeX.  I don't think this works
+% with any other inprementation of TeX/LaTeX.
+%
+% I do not claim I know what I'm doing here.  Although all kinds of shapes
+% seem available, since Devanagari MT does not have Italic or slanted shapes,
+% they will be susbtituted with non-slanted/non-Italic shapes.
+%
+% So far, this seems to work inside a LaTeX document.
+%
+% Use \dnfamily or \textdn{} to switch to Devanagari.
+
+% Kengo 2004/09/06
+
+% made everything 10% bigger because it felt that Devanagari was too small compared to the surroundings.  Also, used ssub instead of defining for bold, etc. where no font exists.
+
+% There is a bug in Apple's Devanagari MT:  if च्छ्रे does not look right with that font, I need to do something in the style file or in the conversion.
+
+\DeclareFontFamily{EU1}{dn}{}
+\DeclareFontShape{EU1}{dn}{m}{n}%
+     {<-> s * [1.00] "Devanagari\space MT:%
+       % Ligatures=Rare\space Ligatures;
+       % Ligatures=Logo\space Ligatures;
+       Conjuncts=Additional\space Conjuncts;
+%       Character\space Alternates=Old\space Style\space Variants;
+       mapping=tex-text"}{}
+
+\DeclareFontShape{EU1}{dn}{m}{it}%
+     {<-> ssub * dn/m/n}{} % can we use \fontdimen1 to produce slanted?
+
+\DeclareFontShape{EU1}{dn}{bx}{n}%
+     {<-> s * [1.00] "Devanagari\space MT\space Bold:%
+       % Ligatures=Rare\space Ligatures;
+       % Ligatures=Logo\space Ligatures;
+       Conjuncts=Additional\space Conjuncts;
+       mapping=tex-text"}{}
+
+\DeclareFontShape{EU1}{dn}{bx}{it}%
+     {<-> ssub * dn/bx/n}{}
+
+\DeclareFontShape{EU1}{dn}{b}{n}%
+     {<-> ssub * dn/bx/n}{}
+
+\DeclareFontShape{EU1}{dn}{b}{it}%
+     {<-> ssub * dn/bx/it}{}
+
+\DeclareFontShape{EU1}{dn}{m}{sc}%
+     {<-> "Devanagari\space MT\space Bold:%
+       % Ligatures=Rare\space Ligatures;
+       % Ligatures=Logo\space Ligatures;
+       Conjuncts=Additional\space Conjuncts;
+       mapping=tex-text"}{}
+
+\newcommand\dnfamily{\usefont{EU1}{dn}{m}{n}}
+
+%\newcommand{\dn}{\language=\sanskrit\dnfamily}
+\newcommand{\dn}{\dnfamily}
+\newcommand{\dnb}{\usefont{EU1}{dn}{b}{n}}
+\DeclareTextFontCommand{\textdn}{\dnfamily}
+

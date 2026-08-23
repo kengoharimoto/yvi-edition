@@ -1,0 +1,322 @@
+%!TEX TS-program = xelatex -output-driver="xdvipdfmx -q -E" "$1"
+%!TEX encoding = UTF-8 Unicode
+% \documentclass[a4paper,10pt]{memoir}
+\documentclass[a4paper,10pt,showtrims]{memoir} % This is for testing on A4 paper
+% \documentclass[b5paper,10pt,showtrims]{memoir}
+% \documentclass[royalvopaper,10pt,showtrims]{memoir} % this is going to be the final
+\raggedbottom
+\usepackage[xetex]{graphicx,color}
+\usepackage[]{hologo}
+\usepackage[EU1]{fontenc}
+% \usepackage{lmodern}
+\usepackage{fontspec}
+\usepackage[]{polyglossia}
+\setdefaultlanguage{american} % apperantly for polyglossia
+\setotherlanguage{sanskrit}   % ditto
+\setotherlanguage{english}   % ditto
+% \newfontfamily\sanskritfont[Scale=1.00, Mapping=tex-text]{Devanagari MT} % the scaling does not have effect currently
+% \newfontfamily\devanagarifont[Scale=1.00, Mapping=tex-text]{Devanagari MT} % the scaling does not have effect currently
+\usepackage{natbib}
+%\usepackage[para*,Bplain,Cpara,Dpara,Eplain,addpageno,switch,pagewise]{ednotes}
+\usepackage[para*,Bplain,Cplain,Dpara,Eplain,addpageno,switch,pagewise]{ednotes}
+% \usepackage[para*,Bplain,Cplain,Dplain,Eplain,addpageno,switch,pagewise]{ednotes}
+\usepackage{utf8dev} % I load this for backward compatibility.
+% \usepackage{utf8cm}
+\usepackage{utf8dingbats}
+\usepackage{utf8bodoni}
+\usepackage{utf8stix}
+\usepackage{utf8applesymbols}
+\usepackage{yvied}
+\usepackage{ifthen}
+\usepackage{mparhack} % to have \marginpar at the correct side.
+\usepackage[pagebackref,xetex]{hyperref}
+\usepackage{ellipsis}
+% \renewcommand{\ellipsisgap}{0.4em}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{namesandterms}
+%%%
+%%% END OF LOADING PACKAGES
+%%%
+
+\hyphenation{man-u-script man-u-scripts sov-er-eign-ty}
+
+%%% LAYOUTS
+% \overfullrule=5pt % be sure to comment out this line
+% A4 has 297x210
+% \settrimmedsize{277mm}{*}{0.666}
+% \setstocksize{9.5in}{6.25in}
+% \settrimmedsize{257mm}{182mm}{*}
+% \settrimmedsize{260mm}{175mm}{*}
+\settrimmedsize{9.5in}{6.25in}{*} % The final production value!
+%%% The following lines are to have the trimmed pages in the center of the stock.
+\setlength{\trimedge}{\stockwidth} % This is for testing. comment out for the final
+\addtolength{\trimedge}{-\paperwidth} % This is for testing. comment out for the final
+\setlength{\trimtop}{\stockheight} % \trimtop = \stockheight 
+\addtolength{\trimtop}{-\paperheight} % \trimtop = \stockheight - \paperheight 
+\settrims{0.5\trimtop}{0.5\trimedge} % comment this out for the final
+%%% up to here
+\setlxvchars
+% \settypeblocksize{*}{1.07 \lxvchars}{1.618}
+% \setlrmargins{*}{*}{2}
+\settypeblocksize{*}{1.09 \lxvchars}{1.7320508}
+\setlrmargins{*}{*}{1.7320508}
+\setulmargins{*}{*}{1.4142136}
+% \settypeblocksize{500pt}{1.11 \lxvchars}{*}
+% \setheadfoot{14pt}{36pt}
+\checkandfixthelayout
+\typeoutlayout
+\typeoutstandardlayout
+\setmarginnotes{0.5em}{0.6in}{0pt}
+%%% END OF LAYOUT
+
+\newcommand{\st}[1]{\textbf{\large#1}}
+\newcommand{\bht}[1]{\textbf{#1}}
+\newcommand{\fn}{\footnote}
+% see TeXBook p.366
+\def\myraggedright{%
+  %\hyphenpenalty=-100
+  \rightskip=0pt plus1em
+  \spaceskip=.3333em \xspaceskip=.5em\relax
+}
+
+%\newenvironment{uncertain}{\special{x:textcolor=666666}}{\special{x:textcolor=000000}}
+\maxsecnumdepth{book} 
+\setsecnumdepth{book} 
+
+% changes made on 20140425
+% \linenumbersep=.5em % ednotes
+\linenumbersep=10pt % ednotes; in fact lineno.sty
+\linenumberwidth=5.525pt
+
+% this is used throughout this trl.  I can't bother reinprementing it for now.  So, it's an empty command.
+\newcommand{\refm}[1]{}
+% \bibliographystyle{plainnat}
+\bibliographystyle{kengo2}
+\citeindextrue % natbib specific
+% \bibliographystyle{plainnat}
+\bibpunct[:\,]{(}{)}{,}{a}{}{,}
+\title{God, Reason, and Yoga}
+\author{Kengo Harimoto}
+\makeindex
+
+\makepagestyle{yvibook}
+\makepsmarks{yvibook}{% 
+  \createmark{chapter}{both}{nonumber}{}{}
+  \createmark{section}{right}{nonumber}{}{}
+  \createplainmark{toc}{both}{\contentsname}
+  \createplainmark{lof}{both}{\listfigurename}
+  \createplainmark{lot}{both}{\listtablename}
+  \createplainmark{bib}{both}{\bibname}
+  \createplainmark{index}{both}{\indexname}
+  \createplainmark{glossary}{both}{\glossaryname}
+}
+
+% \makeevenhead{yvibook}{\leftmark}{}{}
+% \makeoddhead{yvibook}{}{}{\rightmark}
+\makeevenhead{yvibook}{\thepage}{}{\leftmark}
+\makeoddhead{yvibook}{\rightmark}{}{\thepage}
+% \makeevenfoot{yvibook}{}{\thepage}{}
+% \makeoddfoot{yvibook}{}{\thepage}{}
+% \makeevenfoot{yvibook}{[Draft]}{}{\today}
+% \makeoddfoot{yvibook}{\today}{}{[Draft]}
+\pagestyle{yvibook}
+
+\makepagestyle{cried}
+\makepsmarks{cried}{% 
+  \createmark{chapter}{both}{nonumber}{}{}
+  \createmark{section}{right}{nonumber}{}{}
+  \createplainmark{toc}{both}{\contentsname}
+  \createplainmark{lof}{both}{\listfigurename}
+  \createplainmark{lot}{both}{\listtablename}
+  \createplainmark{bib}{both}{\bibname}
+  \createplainmark{index}{both}{\indexname}
+  \createplainmark{glossary}{both}{\glossaryname}
+}
+
+\makeevenhead{cried}{\thepage}{}{\rightmark}
+\makeoddhead{cried}{\rightmark}{}{\thepage}
+\makeevenfoot{cried}{[Samādhipāda I]}{}{[Sūtra 23]}
+\makeoddfoot{cried}{[Sūtra 23]}{}{[Samādhipāda I]}
+% \pagestyle{cried}
+
+\makepagestyle{test}
+\makepsmarks{test}{% 
+  \createmark{chapter}{both}{nonumber}{}{}
+  \createmark{section}{right}{nonumber}{}{}
+  \createplainmark{toc}{both}{\contentsname}
+  \createplainmark{lof}{both}{\listfigurename}
+  \createplainmark{lot}{both}{\listtablename}
+  \createplainmark{bib}{both}{\bibname}
+  \createplainmark{index}{both}{\indexname}
+  \createplainmark{glossary}{both}{\glossaryname}
+}
+\makeevenhead{test}{}{}{}
+\makeoddhead{test}{}{}{}
+\makeevenfoot{test}{}{}{}
+\makeoddfoot{test}{}{}{}
+
+
+% so that we don't get 0.1 for tables, etc. 20140406
+\makeatletter
+  \counterwithout{figure}{chapter}
+  \counterwithout{table}{chapter}
+  \renewcommand\@memfront@floats{}
+  \renewcommand\@memmain@floats{}
+  \renewcommand\@memback@floats{}
+\makeatother
+
+\begin{document}
+% \nouppercaseheads
+\frontmatter
+
+\begin{titlingpage}
+% \input{titlepage}
+\end{titlingpage}
+\firmlists
+% \tightlists
+\setbeforeparaskip{2.25ex plus .66ex minus .2ex}
+\setbeforesubparaskip{2.00ex plus .5ex minus .4ex}
+\cleardoublepage
+\tableofcontents
+% \input{preface}
+% \input{acknowledgement}
+
+% \hfuzz=10pt
+\mainmatter
+\let\oldfootnoterule\footnoterule
+\renewcommand*{\footnoterule}{}
+\input{abbrev2}
+\firmlists
+\pagestyle{yvibook}
+% \part{Introduction}
+% \renewcommand{\leftmark}{\MakeUppercase{Introduction}}
+\renewcommand{\rightmark}{\MakeUppercase{General Introduction}}
+% \input{genint}
+% \renewcommand{\rightmark}{\MakeUppercase{Introduction to the Edition}}
+% \input{intro}
+
+\newcommand{\starteditionchapter}{
+  \begin{sanskrit}%
+	\begin{Spacing}{1.30}%
+}
+\newcommand{\finisheditionchapter}{%
+  \end{Spacing}%
+  \end{sanskrit}%
+  \begin{english}% These two lines are silly; polyglossia does something 
+  \end{english}%   funny to the toc file.
+}
+
+\part{Critical Text}\renewcommand{\leftmark}{\MakeUppercase{[Critical Text}}
+% \input{crittext}
+
+\makechapterstyle{crited}{%
+  \chapterstyle{default}
+  \chapterstyle{article}%
+  \renewcommand*{\thechapter}{\Roman{chapter}}
+  \renewcommand*{\printchapternum}{% center number/title
+    \centering\chapnumfont \thechapter\space\space}%
+  \renewcommand*{\printchapternonum}{\centering}
+  \renewcommand*{\clearforchapter}{}% no new page
+  \aliaspagestyle{chapter}{yvied}}% no special pagestyle
+
+
+\chapterstyle{crited}
+% \pagestyle{cried}
+\chapter{Critical Text 1.2}%
+\renewcommand{\rightmark}{\MakeUppercase{1.2]}}
+% \thispagestyle{test}
+\starteditionchapter
+\input{text02}
+\finisheditionchapter
+
+% \chapter{Critical Text 1.3}%
+% \renewcommand{\rightmark}{\MakeUppercase{1.3]}}
+% \starteditionchapter
+% \input{text03}
+% \finisheditionchapter
+%
+% \chapter{Critical Text 1.4}%
+% % \chapter{Commentary on \PYS\ 1.25}%
+% \renewcommand{\rightmark}{\MakeUppercase{1.4]}}
+% \starteditionchapter
+% \input{text04}
+% \finisheditionchapter
+%
+% \chapter{Critical Text 1.5}%
+% \renewcommand{\rightmark}{\MakeUppercase{1.5]}}
+% \starteditionchapter
+% \input{text05}
+% \finisheditionchapter
+%
+% \chapter{Critical Text 1.6}%
+% \renewcommand{\rightmark}{\MakeUppercase{1.6]}}
+% \starteditionchapter
+% \input{text06}
+% \finisheditionchapter
+%
+% \chapter{Critical Text 1.7}%
+% \renewcommand{\rightmark}{\MakeUppercase{1.7]}}
+% \starteditionchapter
+% \input{text07}
+% \finisheditionchapter
+% Upad. 14.4 buddhi as light!
+% Upad 14 in general as dream being sm.rti!
+% {\dn chaayaa madhura"siitalam} % refer to Upad. 18.34!!! {\dn vastu
+% cchaayaa sm.rter anyan maadhuryaadi ca kaara.nam}
+
+% \rmfamily
+\nolinenumbers
+\chapterstyle{default}
+\openright
+\part{Translation}
+\renewcommand{\leftmark}{\MakeUppercase{[Translation}}
+% \flushbottom
+% \chapter{Translation}
+\input{trl02}
+% \input{trl03}
+% \input{trl04}
+% \input{trl05}
+% \input{trl06}
+% \input{trl07}
+
+% \appendix
+% \renewcommand{\leftmark}{\MakeUppercase{Appendices}}
+% \appendixpage
+% \pagestyle{yvibook}
+%
+% \chapter{Critical Text 1.1}%
+%   \renewcommand{\rightmark}{\MakeUppercase{Critical Text 1.1}}
+% \starteditionchapter
+% \label{CTEXT01}%
+% \input{text01}
+% \finisheditionchapter
+%
+% \chapter{Translation of the Commentary on \PYS\ 1.1}
+% \renewcommand{\rightmark}{\MakeUppercase{Translation of YVi 1.1}}
+% \thispagestyle{plain}
+% \input{trl01}
+%
+% \chapter{The ending of the YVi}\label{ENDOFTML}
+% \renewcommand{\rightmark}{\MakeUppercase{The ending of the YVi}}
+% \thispagestyle{plain}
+% \input{colophons}
+%
+% \chapter{Materials for the Authorship Problem}
+% \renewcommand{\rightmark}{\MakeUppercase{Materials for the Authorship Problem}}
+% \thispagestyle{plain}
+% \input{thework}
+%
+\backmatter
+\renewcommand{\rightmark}{\MakeUppercase{Bibliography}}
+% \renewcommand{\leftmark}{\MakeUppercase{Bibliography}}
+\thispagestyle{plain}
+
+\bibliography{mybibli} 
+
+\thispagestyle{plain}
+% \hfuzz=40pt
+\renewcommand{\leftmark}{\MakeUppercase{INDEX}}
+\renewcommand{\rightmark}{\MakeUppercase{INDEX}}
+\printindex
+\end{document}

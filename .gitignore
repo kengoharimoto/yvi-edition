@@ -1,0 +1,23 @@
+# TeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.idx
+*.ilg
+*.ind
+*.toc
+*.bbl
+*.blg
+# OS / app clutter
+.DS_Store
+Thumbs.db
+Picasa.ini
+# defunct 2012 Subversion metadata
+.svn/
+# MS images: local working copies; masters in ~/Documents/MSS/YVi MSS/
+Lahore MS/
+Thrissur MS/
+Trivandrum MS/
+*.jpg
+*.tif
