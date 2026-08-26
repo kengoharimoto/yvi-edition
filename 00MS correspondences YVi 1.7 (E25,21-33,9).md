@@ -35,6 +35,13 @@ Verified anchors (2026-08-23):
 
 ## Trivandrum, Malayalam MS (Tm)
 
+NEW SCANS (in use since 2026-08-26): `~/Documents/MSS/YVi MSS/YVi New scan
+from photos/`, superseding the Reel 1 microfilm frames below. In
+`20210201-2204.pdf`: **textual folio 11 = top folio on p. 45 (left half) and
+p. 47** (right half). NB the leaf itself is numbered "10": the scribe numbered
+two folios "4", so from there on the written foliation runs one behind the
+textual foliation (written n = textual n+1).
+
 9 lines per side, ≈3.4–3.8 E-lines per MS line, ≈1.2 E-pages per side.
 Leaf 10 is broken into left and right pieces.
 
