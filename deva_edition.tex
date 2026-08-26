@@ -54,6 +54,12 @@
   \renewcommand{\lemmafmt}[1]{{\sanskritfont\kundala ##1}\thinspace]\,}%
   \renewcommand{\notefmt}[1]{\cm\spaceskip 0pt \xspaceskip 0pt ##1}%
 }
+% Editorial notes (\edn) are English prose: Latin font throughout.
+\renewcommand*{\Enotefmt}{%
+  \renewcommand*{\linesfmt}[1]{\kern -2.0em {\latinroman\textbf{##1}}\enspace}%
+  \renewcommand{\lemmafmt}[1]{}%
+  \renewcommand{\notefmt}[1]{\latinroman ##1}%
+}
 % Symbols that must not be looked up in the Devanagari font:
 \renewcommand{\om}{{\cm\emph{om.}}}
 \renewcommand{\dag}{{\cm\textdagger}}

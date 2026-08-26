@@ -20,7 +20,9 @@ CTRL = re.compile(r"\\[a-zA-Z@]+\*?|\\-|\\\\")
 DIM = re.compile(r"\d+(?:\.\d+)?(?:pt|em|ex|in|mm|cm)\b")
 LATINISM = re.compile(
     r"\b(?:conj|em)\."
-    r"|\(\\emph\{kṣya\} appearing[^)]*\)")  # English remark in the app. at l.289
+    r"|\(\\emph\{kṣya\} appearing[^)]*\)"   # English remark in the app. at l.289
+    r"|Cf\.\\ BSSBh intro\.:"               # framing of the PNDT testimonia note
+    r"|\(BSSBh NSP ed pp\. 40–43\)")
 
 VOWEL2MATRA = {"अ": "", "आ": "ा", "इ": "ि", "ई": "ी", "उ": "ु", "ऊ": "ू",
                "ऋ": "ृ", "ॠ": "ॄ", "ए": "े", "ऐ": "ै", "ओ": "ो", "औ": "ौ"}
@@ -37,6 +39,24 @@ def stash_repl(stash):
         stash.append(m.group(0))
         return f"\x01{len(stash)-1}\x02"
     return repl
+
+def protect_edn(code, stash):
+    """\\edn{...} editorial notes are English prose: stash the whole macro,
+    balanced braces included, so nothing inside is transliterated."""
+    while True:
+        s = code.find("\\edn{")
+        if s == -1:
+            return code
+        d, k = 1, s + len("\\edn{")
+        while k < len(code) and d:
+            if code[k] == "{": d += 1
+            elif code[k] == "}": d -= 1
+            k += 1
+        if d:  # brace group not closed on this line: leave untouched
+            return code
+        stash.append(code[s:k])
+        code = code[:s] + f"\x01{len(stash)-1}\x02" + code[k:]
+
 
 def mark_avagraha(code):
     """U+2019 followed by a letter is an avagraha unless it closes a `...' insertion."""
@@ -60,6 +80,7 @@ for line in lines:
         protected.append(None)
         continue
     stash = []
+    code = protect_edn(code, stash)
     code = PROTECT_ARG.sub(stash_repl(stash), code)
     code = LATINISM.sub(stash_repl(stash), code)
     code = CTRL.sub(stash_repl(stash), code)

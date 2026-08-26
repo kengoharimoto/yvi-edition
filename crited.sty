@@ -245,6 +245,16 @@
 % experimental. no more used
 %\newcommand{\bhasyapart}[1]{\Enote{{}}{#1}}
 
+% Editorial notes register (E layer, bottom of the page, below the apparatus).
+% Usage: \edn{note text} placed inline at the point the note refers to;
+% ednotes anchors it to the current line number.
+\newcommand{\edn}[1]{\Enote{}{#1}}
+\newcommand*{\Enotefmt}{%
+  \renewcommand*{\linesfmt}[1]{\kern -2.0em \textbf{##1}\enspace}%
+  \renewcommand{\lemmafmt}[1]{}% empty lemma: suppress the bracket
+  \renewcommand{\notefmt}[1]{\cm ##1}%
+}
+
 % sigla. etc.
 % \newcommand{\Nk}{\textbf{K}}
 % \newcommand{\Nkac}{{\cm\bfseries K$^{ac}$}}
