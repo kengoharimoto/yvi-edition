@@ -38,8 +38,10 @@ Verified anchors (2026-08-23):
 NEW SCANS (in use since 2026-08-26): `~/Documents/MSS/YVi MSS/YVi New scan
 from photos/`, superseding the Reel 1 microfilm frames below. In
 In `20210201-2204.pdf` (scans of photo prints: odd pages = photos, top folio
-of each is the one annotated; even pages = print backs with photo/frame
-numbers):
+of each is the one annotated; even pages = print backs. The photo/frame
+numbers written on the backs are UNTRUSTWORTHY — do not use them to identify
+leaves; go by the annotations on the photos themselves and by textual
+continuity):
 
 - **textual folio 11 recto = top folio on p. 41 (left half) and p. 43 (right
   half)** — annotated "10r in fact 11 left" and "10r or 11r right".
