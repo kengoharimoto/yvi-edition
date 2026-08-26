@@ -37,12 +37,21 @@ Verified anchors (2026-08-23):
 
 NEW SCANS (in use since 2026-08-26): `~/Documents/MSS/YVi MSS/YVi New scan
 from photos/`, superseding the Reel 1 microfilm frames below. In
-`20210201-2204.pdf`: **textual folio 11 verso = top folio on p. 45 (left
-half) and p. 47 (right half)** — both annotated "Tm10(11)v" in the scan
-itself, with line numbers marked. NB the leaf itself is numbered "10": the
-scribe numbered two folios "4", so from there on the written foliation runs
-one behind the textual foliation (written n = textual n+1).
-Per the calibration below, Tm11v ≈ E 27 (– early 28).
+In `20210201-2204.pdf` (scans of photo prints: odd pages = photos, top folio
+of each is the one annotated; even pages = print backs with photo/frame
+numbers):
+
+- **textual folio 11 recto = top folio on p. 41 (left half) and p. 43 (right
+  half)** — annotated "10r in fact 11 left" and "10r or 11r right".
+  Per the calibration below, Tm11r ≈ E 25,27 – 26 (should begin near
+  `nanu cānumānasya prakṛtatvāt...` E 25,26 / [26,2] `liṅgasyaiva sambandho`).
+- **textual folio 11 verso = top folio on p. 45 (left half) and p. 47 (right
+  half)** — both annotated "Tm10(11)v", with line numbers marked.
+  Tm11v ≈ E 27 (– early 28).
+
+NB the leaf itself is numbered "10": the scribe numbered two folios "4", so
+from there on the written foliation runs one behind the textual foliation
+(written n = textual n+1).
 
 9 lines per side, ≈3.4–3.8 E-lines per MS line, ≈1.2 E-pages per side.
 Leaf 10 is broken into left and right pieces.
