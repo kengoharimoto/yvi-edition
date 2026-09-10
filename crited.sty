@@ -12,19 +12,33 @@
 \newcommand{\il}{{\cm \`{}}} % added characters left
 \newcommand{\ir}{{\cm \'{}}} % added characters right
 
+% Hyphenation helper: TeX only hyphenates a word that begins right after
+% glue, so a rule or parenthesis glued to a word (\mms, \mme, \mds, \mde)
+% makes the whole adjoining word unbreakable.  A no-break zero glue on
+% either side of the mark restores hyphenation without allowing a line
+% break at the mark itself.
+\newcommand{\hyphok}{\ifhmode\nobreak\hskip0pt\fi}
+% A discretionary hyphen that leaves the words on both sides hyphenatable
+% (a bare \- glued to a word switches off automatic hyphenation for it).
+\newcommand{\hyb}{\hyphok\-\hyphok}
+
 % Start of Tm missing.
 \def\mms{%\hskip 1.1pt
+  \hyphok
   \vrule width0.3pt height-.17ex depth.8ex
   \vrule width3pt height-.77ex depth.8ex 
   \vrule width-3.3pt
+  \hyphok
 %  \hskip .8pt
 }
 
 % End of Tm missing.
 \def\mme{%\hskip 1.1pt
+  \hyphok
   \vrule width-3.3pt
   \vrule width3pt height-.77ex depth.8ex
   \vrule width0.3pt height-.17ex depth.8ex
+  \hyphok
 %  \hskip .8pt
 }
 % 
@@ -38,7 +52,7 @@
 \newlength{\parenw}%
 \settowidth{\parenw}{(}
 \def\mds{%
-  (%
+  \hyphok(\hyphok
   % \kern -\parenw%
 }
 
@@ -53,7 +67,7 @@
 \newlength{\parencw}%
 \settowidth{\parencw}{)}
 \def\mde{%
-  )%
+  \hyphok)\hyphok
   % \kern -\parencw%
 }
 
@@ -139,11 +153,11 @@
 %\newcommand*{\varmm}[2]{\sf\defkundala\Anote{#1\<<{\skt \ZM{FTV}\ZS{20}}>\>}{#2}\sf\undekundala}
 %\newcommand*{\varms}[2]{\sf\defkundala\Anote{#1}{#2}\sf\undefkundala}
 \newcommand*{\varsm}[2]{\Anote{#1\<<°>\>}{#2}}
-\newcommand*{\vrtsm}[3]{\mms\Anote{#1\<<°>\>}{{\cm #2, } #3}\mme\-}
+\newcommand*{\vrtsm}[3]{\mms\Anote{#1\<<°>\>}{{\cm #2, } #3}\mme\hyb}
 % \newcommand*{\varmm}[2]{\-\defkundala\Anote{#1\<<°>\>}{#2}\undefkundala\-}
-\newcommand*{\vrtmm}[3]{\-\mms\defkundala\Anote{#1\<<°॰>\>}{{\cm #2, } #3}\mme\undefkundala\-}
+\newcommand*{\vrtmm}[3]{\hyb\mms\defkundala\Anote{#1\<<°॰>\>}{{\cm #2, } #3}\mme\undefkundala\hyb}
 \newcommand*{\varms}[2]{\-\defkundala\Anote{#1}{#2}\undefkundala}
-\newcommand*{\vrtms}[3]{\-\mms\defkundala\Anote{#1}{{\cm #2, } #3}\mme\undefkundala}
+\newcommand*{\vrtms}[3]{\hyb\mms\defkundala\Anote{#1}{{\cm #2, } #3}\mme\undefkundala}
 
 \newcommand*{\Anotefmt}{% 
 % \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
@@ -248,7 +262,7 @@
 % Editorial notes register (E layer, bottom of the page, below the apparatus).
 % Usage: \edn{note text} placed inline at the point the note refers to;
 % ednotes anchors it to the current line number.
-\newcommand{\edn}[1]{\Enote{}{#1}}
+\newcommand{\edn}[1]{\Enote{}{#1}\hyphok}
 \newcommand*{\Enotefmt}{%
   \renewcommand*{\linesfmt}[1]{\kern -2.0em \textbf{##1}\enspace}%
   \renewcommand{\lemmafmt}[1]{}% empty lemma: suppress the bracket

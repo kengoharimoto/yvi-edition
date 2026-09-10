@@ -41,21 +41,27 @@ def stash_repl(stash):
     return repl
 
 def protect_edn(code, stash):
-    """\\edn{...} editorial notes are English prose: stash the whole macro,
-    balanced braces included, so nothing inside is transliterated."""
-    while True:
-        s = code.find("\\edn{")
-        if s == -1:
-            return code
-        d, k = 1, s + len("\\edn{")
-        while k < len(code) and d:
-            if code[k] == "{": d += 1
-            elif code[k] == "}": d -= 1
-            k += 1
-        if d:  # brace group not closed on this line: leave untouched
-            return code
-        stash.append(code[s:k])
-        code = code[:s] + f"\x01{len(stash)-1}\x02" + code[k:]
+    """\\edn{...} editorial notes are English prose, and {\\cm ...} groups
+    are Latin text inside Sanskrit notes (e.g. a reference in \\donote):
+    stash the whole group, balanced braces included, so nothing inside is
+    transliterated."""
+    for opener in ("\\edn{", "{\\cm "):
+        pos = 0
+        while True:
+            s = code.find(opener, pos)
+            if s == -1:
+                break
+            d, k = 1, s + len(opener)
+            while k < len(code) and d:
+                if code[k] == "{": d += 1
+                elif code[k] == "}": d -= 1
+                k += 1
+            if d:  # brace group not closed on this line: leave untouched
+                break
+            stash.append(code[s:k])
+            code = code[:s] + f"\x01{len(stash)-1}\x02" + code[k:]
+            pos = s + 1
+    return code
 
 
 def mark_avagraha(code):
@@ -269,6 +275,16 @@ for i in range(len(result) - 1):
             result[k] = ncode.replace(nxt, nxt[1:], 1) + ncomment
     elif re.match("[\u0900-\u097f]", tail[-1:]) and nxt.startswith("\u093d"):
         result[i] = tail + (comment or "%")
+
+# ---------- pass 5: explicit hyphens ----------
+# A bare \- glued to a word switches off TeX's automatic hyphenation for
+# that word, which matters far more in Devanagari (no hyphenation inside
+# the long compounds) than in IAST.  \hyb (crited.sty) keeps the break
+# point but leaves both halves hyphenatable.
+for i, ln in enumerate(result):
+    code, comment = split_line(ln)
+    if "\\-" in code:
+        result[i] = code.replace("\\-", "\\hyb{}") + comment
 
 open(DST, "w", encoding="utf-8").write("\n".join(result))
 leftover = sum(1 for ln in result

@@ -28,6 +28,13 @@
 \usepackage[usenames]{xcolor}
 \usepackage{crited}
 
+% Devanagari MT's interword space has very little stretch and long
+% compounds can only break between akṣaras, so at the default tolerance
+% TeX often finds no acceptable break and sets an overfull line instead.
+% Accept looser lines rather than lines that run into the margin.
+\tolerance=1000
+\emergencystretch=1.5em
+
 % Memoir thing
 \setsecnumdepth{subparagraph}
 \maxsecnumdepth{subparagraph}
@@ -68,8 +75,21 @@
 \renewcommand*{\lemmaellipsis}{{\cm\,\ldots\,}}
 % Lemma-ellipsis kundalas in Devanagari:
 \renewcommand*{\varsm}[2]{\Anote{#1\<<॰>\>}{#2}}
-\renewcommand*{\vrtsm}[3]{\mms\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\-}
-\renewcommand*{\vrtmm}[3]{\-\mms\defkundala\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\undefkundala\-}
+\renewcommand*{\vrtsm}[3]{\mms\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\hyb}
+\renewcommand*{\vrtmm}[3]{\hyb\mms\defkundala\Anote{#1\<<॰>\>}{{\cm #2, } #3}\mme\undefkundala\hyb}
+% The C register (\tst, \donote on \tstwll labels) holds Sanskrit
+% parallels: Devanagari font, with Latin bits marked \cm in the source.
+\makeatletter
+\renewcommand*{\Cnotefmt}{%
+  \renewcommand*{\linesfmt}[1]{\kern -2.0em {\latinroman\textbf{##1}}\enspace}%
+  \renewcommand{\lemmafmt}[1]{%
+    \def\@inlemma{YES}%
+    \let\Large=\normalsize
+    {\sanskritfont\kundala ##1}\thinspace]\enskip
+    \def\@inlemma{NO}}%
+  \renewcommand{\notefmt}[1]{\sanskritfont\spaceskip 0pt \xspaceskip 0pt ##1}%
+}
+\makeatother
 % The bottom (Bhāṣya) register is pure Devanagari.
 \renewcommand*{\Bnotefmt}{%
   \renewcommand{\lemmafmt}[1]{\enskip}%
