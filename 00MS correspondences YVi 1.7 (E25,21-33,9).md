@@ -50,6 +50,46 @@ continuity):
 - **textual folio 11 verso = top folio on p. 45 (left half) and p. 47 (right
   half)** — both annotated "Tm10(11)v", with line numbers marked.
   Tm11v ≈ E 27 (– early 28).
+- **textual folio 13 recto = p. 49 (left half) and p. 51 (right half)** —
+  annotated "Tm12r left" / "Tm12r right", but the annotations are WRONG here:
+  the leaf turned out to be textual folio 13 (verified 2026-08-27; consistent
+  with the written foliation running one behind — a leaf numbered "12" is
+  textual 13). Tm13r ≈ E 30–31. (Backs say "23 13a" / "24 13a" — ignore.)
+- **textual folio 13 verso = top folio on p. 53 (left half) and, presumably,
+  p. 55 (right half)** — p. 53 annotated "Tm12v left" (same error); no
+  annotation made out on p. 55, so confirm the right half by textual
+  continuity. Tm13v ≈ E 31–32.
+- **Textual folio 12 (written "11") LOCATED (2026-08-27): it is the
+  unannotated BOTTOM strip in the folio-11 photos.**
+  - **12 recto = bottom strip on pp. 41 (left) / 43 (right)** = Reel 1 frame
+    `9b` (same face; both open with the same line). Verified by line 1
+    continuing 12r1: "(dagnyādibuddhinimittadhūmādibuddhivat) saṃśaya-
+    nivarttakatvāc ca..." and line 2 matching "liṅgānveṣaṇa ... prāg" of
+    E 28,2–3. (The "dagnyādi..." opening itself falls in the abraded left
+    end of line 1.)
+  - **12 verso = bottom strip on pp. 45 (left) / 47 (right)** = Reel 1 frame
+    `9a`. Verified: upper lines match "…(iha)deśaghaṭābhāvasambandhe…"
+    (E 29,4); last lines have "…vad iti kākalocanavad ubhaya(tra)…" and
+    "gatimac candratārakam…" (E 29,24–26), running up to 13r1's "atha vai…"
+    (E 30,7).
+  - So the old guess that Reel 1 `9a`/`9b` is leaf 11 was one off: **that
+    leaf is textual folio 12** (9b = recto, 9a = verso).
+  - So Tm12r ≈ E 27,26 – 29,2; Tm12v ≈ E 29,2 – 30,7.
+- The remaining photos (2026-08-27 sweep of `20210201-2204.pdf`): pp. 57–75
+  are UNANNOTATED two-folio photos; pp. 77/79 and 81/83 are annotated in red
+  "23v"/"24r" and "24v"/"25r" (a later stretch). Tentative placements, all
+  from Claude's uncertain readings — CONFIRM BEFORE USE:
+  - bottom strip on p. 53: early lines seem to contain the double
+    "caityavandana…" of E 33,4–5 → probably **textual folio 14 recto**
+    (14r ≈ E 32,15 – 33,15).
+  - bottom strip on p. 55: line 1 seems to read "…jñāna…vairāgya…" → possibly
+    a STRAY leaf from the YS 1.12–16 region, i.e. NOT the same leaf as the
+    p. 53 bottom strip.
+  - bottom leaf on p. 57: line 1 seems to read "…saṃprajñātaḥ…" → a stray
+    leaf from the YS 1.17–18 region.
+  - full-resolution photos extracted from the PDF (pdfimages) and working
+    crops are in the session scratchpad; re-extract with
+    `pdfimages -f <p> -l <p> -all 20210201-2204.pdf out`.
 
 NB the leaf itself is numbered "10": the scribe numbered two folios "4", so
 from there on the written foliation runs one behind the textual foliation
@@ -64,8 +104,9 @@ Leaf 10 is broken into left and right pieces.
 - Continuation: leaves **11r – ≈13v** (≈6 sides). Not yet cropped/renamed;
   the frames are in `~/Documents/MSS/YVi MSS/YVi Trivandrum (jpeg)/Reel 1/`.
   Frame numbers do NOT track the textual foliation (bundle disordered).
-  - Frames `9a`/`9b` are the two sides of a single leaf (matching damage) —
-    the natural candidate for leaf 11; verify by continuity with Tm10v's last line.
+  - Frames `9a`/`9b` are the two sides of a single leaf — IDENTIFIED
+    2026-08-27 as **textual folio 12** (9b = recto, 9a = verso), the same
+    leaf as the bottom strips on pp. 41–47 of `20210201-2204.pdf`; see below.
   - Remaining candidates, in frame order: `10a`, `10b`, `11a`, `11b`, `12a`,
     `12b`, `13`, `14a`, `14b`, then `15a`, `15b`, `16a`, `16b` in reserve.
     (`14b.jpg` was already copied into `Trivandrum MS/` in 2017 as a
