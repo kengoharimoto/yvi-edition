@@ -25,3 +25,8 @@ Trivandrum MS/
 *.pages
 Harimoto jibs65 manuscript*.txt
 inbutsu 2016*.pdf
+# macOS alias files, not real PDFs
+Harimoto_GRY.pdf
+Patanjala_Yogasutra_Bhasya_Vivarana.pdf
+text.pdf
+YVi Td Samadhipada 1*.pdf
