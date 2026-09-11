@@ -32,7 +32,7 @@ python3 iast2deva_tex.py text07.tex text07dn.tex
 `crited.sty` is used by the roman/deva editions; `yvied.sty` is the older book counterpart. Key macros in `text07.tex`:
 
 - `\vrt{lemma}{agreeing witnesses}{\rdg{reading}{witness}}` — apparatus entry (Anote). Variants `\vrtms`, `\vrtmm`, `\vrtsm` differ in whether a `°` (kundala) marks a trimmed lemma on either side and whether Tm-lacuna rules apply.
-- `\mds` / `\mde` — start/end of text missing in Td (currently rendered as parentheses); `\mms` / `\mme` — missing in Tm (vrule marks).
+- `\mms` / `\mme` — start/end of text missing in Tm (zero-width sub-baseline half hooks); `\mds` / `\mde` — missing in Td (same hooks with a doubled foot). The `\vrt` family no longer marks the lemma extent in the text.
 - `\mll{LABEL}` + `\donote{LABEL}{pratīka}` — margin pratīka notes (Bnotes).
 - `\str{...}` — sūtra text; `\bht{...}` — bhāṣya words being glossed (bold); `\lost{n}` — n lost akṣaras; `\om` — omitted; `\il`/`\ir` — scribal insertions.
 - Comments like `%[18,25]` mark page,line of **E** (the 1952 Madras edition); apparatus and notes cite the text as E page,line.

@@ -42,33 +42,27 @@
 %  \hskip .8pt
 }
 % 
-% Start of Td missing.
-% \def\mds{%\hskip 1.1pt
-%   \vrule width0.3pt height1.8ex depth-1.1ex
-%   \vrule width3pt height1.8ex depth-1.77ex
-%   \vrule width-3.3pt
-% %  \hskip .8pt
-% }
-\newlength{\parenw}%
-\settowidth{\parenw}{(}
+% Start of Td missing.  Same zero-width sub-baseline hook as \mms, but with
+% a doubled foot so that Td and Tm lacunae are told apart at a glance.
 \def\mds{%
-  \hyphok(\hyphok
-  % \kern -\parenw%
+  \hyphok
+  \vrule width0.3pt height-.17ex depth1.1ex
+  \vrule width3pt height-.77ex depth.8ex
+  \vrule width-3pt
+  \vrule width3pt height-1.07ex depth1.1ex
+  \vrule width-3.3pt
+  \hyphok
 }
 
 % End of Td missing.
-% \def\mde{%\hskip 1.1pt
-%   \vrule width-3.3pt
-%   \vrule width3pt height1.8ex depth-1.77ex
-%   \vrule width0.3pt height1.8ex depth-1.1ex
-% %  \hskip .8pt
-% }
-%     
-\newlength{\parencw}%
-\settowidth{\parencw}{)}
 \def\mde{%
-  \hyphok)\hyphok
-  % \kern -\parencw%
+  \hyphok
+  \vrule width-3.3pt
+  \vrule width3pt height-.77ex depth.8ex
+  \vrule width-3pt
+  \vrule width3pt height-1.07ex depth1.1ex
+  \vrule width0.3pt height-.17ex depth1.1ex
+  \hyphok
 }
 
 
@@ -142,7 +136,7 @@
 
 % Anote is for regular variants.
 \newcommand*{\var}{\Anote}
-\newcommand{\vrt}[3]{\mms\Anote{#1}{{\cm #2, } #3}\mme{}}
+\newcommand{\vrt}[3]{\Anote{#1}{{\cm #2, } #3}}
 % \newcommand{\varl}[1]{\Anotelabel{#1}}
 % \newcommand{\vnote}[2]{#1, {\dn #2}}
 % \newcommand{\reading}[2]{{\dn #1} {\cm #2}}
@@ -153,11 +147,11 @@
 %\newcommand*{\varmm}[2]{\sf\defkundala\Anote{#1\<<{\skt \ZM{FTV}\ZS{20}}>\>}{#2}\sf\undekundala}
 %\newcommand*{\varms}[2]{\sf\defkundala\Anote{#1}{#2}\sf\undefkundala}
 \newcommand*{\varsm}[2]{\Anote{#1\<<°>\>}{#2}}
-\newcommand*{\vrtsm}[3]{\mms\Anote{#1\<<°>\>}{{\cm #2, } #3}\mme\hyb}
+\newcommand*{\vrtsm}[3]{\Anote{#1\<<°>\>}{{\cm #2, } #3}\hyb}
 % \newcommand*{\varmm}[2]{\-\defkundala\Anote{#1\<<°>\>}{#2}\undefkundala\-}
-\newcommand*{\vrtmm}[3]{\hyb\mms\defkundala\Anote{#1\<<°॰>\>}{{\cm #2, } #3}\mme\undefkundala\hyb}
+\newcommand*{\vrtmm}[3]{\hyb\defkundala\Anote{#1\<<°॰>\>}{{\cm #2, } #3}\undefkundala\hyb}
 \newcommand*{\varms}[2]{\-\defkundala\Anote{#1}{#2}\undefkundala}
-\newcommand*{\vrtms}[3]{\hyb\mms\defkundala\Anote{#1}{{\cm #2, } #3}\mme\undefkundala}
+\newcommand*{\vrtms}[3]{\hyb\defkundala\Anote{#1}{{\cm #2, } #3}\undefkundala}
 
 \newcommand*{\Anotefmt}{% 
 % \renewcommand*{\sameline}[1]{\linesfmt{##1}}% 
