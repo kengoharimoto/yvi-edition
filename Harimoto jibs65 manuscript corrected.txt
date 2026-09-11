@@ -1,109 +1,0 @@
-The Epistemology of the Author of the Pātañjalayogaśāstravivaraṇa
-
-HARIMOTO Kengo
-
-1. Introduction 
-
-Pramāṇa—valid means of knowledge in the following context—is one of the most widely discussed topics in philosophical Sanskrit writings. In the Pātañjalayogaśāstra (PYŚ)—the combination of the so-called Yogasūtra and the so-called Yogabhāṣya, sūtra 1.6 lists the five cittavṛttis (activities of mind): pramāṇa, viparyaya, vikalpa, nidrā, and smṛti. What are accepted as pramāṇa are listed in the next sūtra (1.7). They are: pratyakṣa, anumāna and āgama. The Bhāṣya on sūtra 1.7 has short discussions on the three.
-
-There is a commentary on the PYŚ ascribed to Śaṅkara. We call it the Pātañjalayogaśāstravivaraṇa (Vivaraṇa). Whether this Śaṅkara is the same Śaṅkara as the author of the Brahmasūtraśāṅkarabhāṣya (BSBh) is still an open question. In the meantime, hence, I refer to the respective authors of the Vivaraṇa and the BSBh as the V-kāra and the BSBh-kāra.
-
-The V-kāra often devotes substantial amount of text to topics that he deems worthy. Pramāṇa  is one of them. He introduces many more topics that are not in the Sūtra or the Bhāṣya in the commentary on 1.7. Although his goal is essentially to explain and defend the Sūtra and the Bhāṣya, in the process, he leaves many hints about his own philosophy and the environment where his philosophy was formed.
-
-Below, I will examine the part on pratyakṣa, the first of the three pramāṇas accepted in the Pātañjala system. First I will present how the discussion on pratyakṣa in the Vivaraṇa is structured. Then I will mention two unique positions the V-kāra held. Of the two, the second one might provide a clue to who the author was.
-
-2. The Vivaraṇa on pratyakṣa
-
-The part I examine here begins with the introduction of sūtras 1.6 and 7 and ends after the discussion on pratyakṣa in the Vivaraṇa. This section forms a unit. The text of the Bhāṣya on pratyakṣa appears simple enough. But the text of the Vivaraṇa explaining it has a more complex structure, with its own sub-topics and the flow of discussions. The words of the root text are incorporated in that structure. Below is the outline of the structure of the discussions, based on the edition I am currently preparing; note that the sections typeset in the bold incorporate the text of the root texts, i.e., of the Yogasūtra and the Bhāṣya on it:
-
-1. Sūtras 1.6 and 7 plus the Bhāṣya on pratyakṣa
-2. Pratyakṣa and viśeṣa
-2.1. Why the Bhāṣya says pratyakṣa is mainly concerned with difference
-2.2. Criticism of the [Buddhist] view that sāmānya is unreal
-3. Yogipratyakṣa and mānasapratyakṣa
-3.1. Question: Are they separate pramāṇa(s) or kinds of pratyakṣa?
-3.2. Answer: Pratyakṣa 
-4 Pramāṇaphala (The result of pramāṇa)
-4.1. Two views to be examined: pramāṇa and its phala are identical; there is an independent phala
-4.2. There is no independent pramāṇaphala
-4.3. Siddhāntas
-4.3.1. No independent phala, nor are pramāṇa and phala identical
-4.3.2. The phala is not the resulting dravya (a thing), either
-4.3.3. The phala is a special state of dravya
-4.3.4. Either kriyā or dravya is figuratively the phala of the other
-4.3.4.1. Opponent: The phala is only figurative?
-4.3.4.2. Answer: Yes
-4.3.4.3. Opponent: Then, the result being more or less erroneous, no reason to pursue pramāṇa
-4.3.4.4. Answer: Correct
-4.3.4.5. samyagdarśana [rather than pramāṇa/pratyakṣa] brings about nivṛtti [i.e., mokṣa]
-4.3.4.6. Mokṣa is brought about only by samyagdarśana (not by pramāṇa that leads to action)
-4.4 The reason why puruṣa’s nature—being aware of buddhi—is not established here/Explanation of the intent of the Bhāṣya’s last statement with regard to pratyakṣa
-4.4.1. Criticism of the Naiyāyika position of pratyakṣa, including their position on pramāṇaphala
-4.4.1.1. Examinations of the view that a cognition is a result of contact
-4.4.1.2. Examinations of the view that ideas of taking or removing are the result of pramāṇa
-4.4.2. The problem of saṃvedyatva of cittavṛtti
-4.4.2.1. Is pramāṇa a karaṇa, one of kārakas?
-4.4.2.2. Siddhānta: cittavṛtti is saṃvedya as the revealer (abhivyañjaka)
-Why is the eyesight not grasped while it is an abhivyañjaka?
-According to the theory that sense faculties are material
-According to the theory that sense faculties are not material
-4.5. Conclusion: pramāṇaphala is what the Bhāṣya says it is
-4.5.1 Question: How is cittavṛtti object of awareness (saṃvedya)? Answer: Not as pratyakṣa
-4.5.2 Final word on pramāṇaphala
-
-3. Definition of pratyakṣa 
-
-The V-kāra pulls an interesting philosophical maneuver when he discusses two concepts that may be conventionally called yogipratyakṣa and mānasapratyakṣa (3 in the outline above). The discussion is introduced in the form of a question and an answer that runs as thus in my reconstruction of the text:
-
-[q] nanu ca yogināṃ nirvikalpasamādhijaṃ darśanaṃ? tasyānevaṃlakṣaṇatvāt tathā sukharāgādivijñānasya cānindriyapranāḍikāpūrvatvāt pramāṇāntaratvam abhyupetavyaṃ pratyakṣatvaṃ vā vaktavyam|
-
-[a] ucyate—na| pratyakṣasya puruṣapratyayāpekṣatvena parihṛtatvāt| na hy apratyayā vṛttiḥ pratyakṣam| caitanyodayahetor eva sapratyayāyāḥ pratyakṣatvam| tathā cāha—phalaṃ tadaviśiṣṭaḥ pauruṣeyaś cittavṛttibodha iti|| … 
-
-In this part, the V-kāra is concerned that the two well-known concepts—expressed with yogināṃ nirvikalpasamādhijaṃ darśanam and sukharāgādivijñānam in the above passage—are not mentioned in the Sūtra or in the Bhāṣya. Furthermore, the seeming definition of pratyakṣa in the Bhāṣya (indriyapraṇāḍikayā cittasya bāhyavastūparāgāt tadviṣayā sāmānyaviśeṣātmano ’rthasya viśeṣāvadhāraṇapradhānā vṛttiḥ pratyakṣam pramāṇam) could potentially preclude those two phenomena to be pratyakṣa. And since they are also not in the list of cittavṛttis of sūtra 1.6, they could not be accounted for in the system of PYŚ. As mentioned in the question part [q] above, the expression in the Bhāṣya indriyapranāḍikayā (“by means of sense faculties”) was the problem.
-
-Here is the translation of the answer part [a] of the above text:
-
-[a] We answer: No. For, [the necessity to accept those two kinds of cognition to be other kinds of pramāṇa or the necessity to state that they nonetheless belong to pratyakṣa] are precluded since pratyakṣa [only] anticipates notions belonging to puruṣa. The activity [of mind] that is unaccompanied by a notion [on puruṣa’s side] is not pratyakṣa. Only as much as [an activity of mind] is the cause of the arising of sentience, i.e., if [puruṣa] is aware of it, it is pratyakṣa. Namely, as the [Bhāṣya says]: The effect is the awareness of the activity of mind, undifferentiated from it (pramāṇa), belonging to puruṣa. ...
-
-The solution to the problem raised in [q] was to take the Bhāṣya sentence typeset in bold above (phalaṃ tadaviśiṣṭaḥ pauruṣeyaś cittavṛttibodhaḥ) as the definition of pratyakṣa, not the one before (indriyapraṇāḍikayā cittasya bāhyavastūparāgāt tadviṣayā sāmānyaviśeṣātmano ’rthasya viśeṣāvadhāraṇapradhānā vṛttiḥ pratyakṣam pramāṇam). Several expressions in this answer part indicate that. For example, the expressions, “puruṣapratyayāpekṣatvena (since pratyakṣa [only] anticipates notions belonging to puruṣa),” “na hy apratyayā vṛttiḥ pratyakṣam (The activity [of mind] that is unaccompanied by a notion [on puruṣa’s side] is not pratyakṣa)” and “sapratyayāyāḥ pratyakṣatvam (if [puruṣa] is aware of it, [the vṛtti,] it is pratyakṣa)” are all variations of the Bhāṣya’s pauruṣeyaś cittavṛtibodhaḥ. The V-kāra is saying that any activity of mind that puruṣa becomes aware of is pratyakṣa. This understanding of what constitutes pratyakṣa appears unique and intriguing.
-
-4. Pramāṇaphala and Distrust of Pramāṇa
-
-As the outline above shows, much of the text on pratyakṣa is in fact a discussion on pramāṇaphala (the result of valid means of knowledge). The most notable thing in this discussion is the V-kāra’s distrust of pramāṇa. This distrust can be seen in section 4.3.4 of the outline (p. 2 in this article). There is an exchange with a hypothetical opponent who objects to  the siddhānta that the pramāṇaphala is only figurative, i.e., unreal. The V-kāra concedes that the primary result of pramāṇa belongs to puruṣa in its mistaken state (mithyābhūtasyaiva mukhyaphalatvaṃ vṛttyākārasya), and that an experience (bhoga) accompanied by activities of mind (cittavṛtti) is nothing but wrong (mithyābhūta eva vṛttyanugato bhogaḥ). He does not just concede these points but goes on to say that those who think pramāṇaphala is not mistaken will not have mokṣa (yeṣām amithyā phalam teṣām…mokṣābhāvaḥ). He is saying that pramāṇa binds a person to saṃsāra. While indifference to pramāṇa in certain philosophical systems is not unknown, the seeming denigration of pramāṇa in the Vivaraṇa appears rather unusual.
-
-I am aware of only one another author who exhibits such a denigrating attitude toward pramāṇa. It is Śaṅkara the BSBh-kāra. In the introductory part of the BSBh, he tells us how the objects of pramāṇas and śāstras (he distinguishes śāstras from pramāṇas) contain (are produced by?) avidyā. In the second half of the critical comments about pramāṇa, the BSBh-kāra sarcastically likens educated (vyutpattimat) people to animals. What Śaṅkara did not like about pramāṇa is that it eventually results in pravṛtti  (taking action) or nivṛtti (stopping action), which is not desirable from his well-known standpoint of no-action.
-
-Let us go back to the V-kāra. Despite his substantial effort to discuss pramāṇa, he is skeptical of the utility of pramāṇa when it comes to mokṣa. This, I think, is noteworthy, because he accepts samyagdarśana to be the cause of mokṣa. Apparently it is not something one gains by pramāṇa. At this point, the V-kāra’s refusal to acknowledge the utility of pramāṇa for mokṣa appears to pertain rather to individuality than to rational thinking. On the other hand, modern scholars have noted the BSBh-kāra’s lack of interest in pramāṇa. Again, as is well-known, the BSBh-kāra’s position is that the knowledge brings about mokṣa and the knowledge comes from the Upaniṣads. Apparently, again, the Upaniṣads are not part of pramāṇa for him. Combined with the sarcastic tone about educated people, this negative attitude toward pramāṇa rather appears to reflect his personal dislike of philosophers who endlessly discussed pramāṇa. The Vivaraṇa and the BSBh talk about pramāṇa being ultimately wrong in quite different contexts. Wordings are also completely different (it is hard to postulate borrowings). What are shared are the conclusion and the beliefs that lead to the conclusion: that pramāṇa makes a person act; and that actions are the opposite of the final salvation.
-
-Now the Vivaraṇa has the the following sarcastic conclusion to the discussion on pramāṇaphala:
-
-tasmāt pramāṇaphalābhijñānābhimānamātram eva kevalaṃ paṇḍitammanyānām ity upekṣaṇīyam iti||
-
-(In conclusion, just a pure arrogant misconception about the term pramāṇaphala simply belongs to those who arrogantly consider themselves to be learned; it should be ignored.)
-
-Here the V-kāra is sarcastic toward “those who arrogantly consider themselves to be learned.” I cannot help hearing a very similar sarcastic tone to that of the BSBh-kāra about the educated. And, whether the same person or not, the BSBh-kāra did what the V-kāra adviced: There is no discussion on pramāṇaphala in the BSBh.
-
-Bibliography
-
-Text Editions
-
-Brahmasūtraśāṅkarabhāṣyam, Śrīmad-Appayyadīkṣita-viracita-Parimalopabṛṃhita-Śrīmad-Amalānandasarasvatī-praṇīta-Kalpataruvyākhyāyuta-Śrīmad-Vācaspatimiśrakṛta-Bhāmatīvilasitam. Edited by N. S. Anantakṛṣṇa Śāstri and Vasudev Laxman Śāstrī Paṇśīkar. Published by Nirnaya Sagar Press. Bombay 1917.
-
-Pātañjala-yogasūtra-bhāṣya-vivaraṇam of Śaṅkara-bhagavatpāda. Madras Government Oriental Series No. 94. Edited by P. S. Rama Śāstrī and S. R. Krishnamurthi Śāstrī. Published by Government Oriental Manuscripts Library. Madras 1952.
-
-Secondary material
-
-Bronkhorst, Johannes. 1985. “Patañjali and the Yoga sūtras.” Studien zur Indologie und Iranistik 10: 191–213.
-
-Harimoto, Kengo. 2014. God, Reason, and Yoga: A Critical Edition and Translation of the Commentary Ascribed to Śaṅkara on Pātañjalayogaśāstra 1.23–28. Indian and Tibetan Studies 1. Hamburg: Department of Indian and Tibetan Studies, Universität Hamburg.
-
-Maas, Philipp. 2006. Samādhipāda: Das erste Kapitel des Pātañjalayogaśāstra zum ersten Mal kritisch ediert/The First Chapter of the Pātañjalayogaśāstra for the First Time Critically Edited. Indologica Halensis, Band 9. Aachen: Shaker Verlag.
-
-Mayeda, Sengaku. 1979. A Thousand Teachings, The Upadeśasāhasrī of Śaṅkara, Translated with Introduction and Notes. Tokyo: University of Tokyo Press.
-
-Wezler, Albrecht. 1983. “Philological Observations on the so-called Pātañjalayogasūtrabhāṣyavivaraṇa (Studies in the Pātañjalayogaśāstravivaraṇa I).” Indo-Iranian Journal 25: 17–40.
-
-Notes
-￼ I would like to express my thanks to Greg Seton who helped write this article.￼ See Wezler 1983, 17–18, Bronkhorst 1985, 203, and Maas 2006, xii–xix.￼ pramāṇaviparyayavikalpanidrāsmṛtayaḥ||6||￼ pratyakṣānumānāgamāḥ pramāṇāni||7||￼ For the title of the text, see Harimoto 2014, 9.￼ For example, the Vivaraṇa has an extensive commentary Īśvara.￼ It corresponds to p. 18, l. 25–p. 25, l. 20 in the 1952 Madras edition.￼ The version that the author of the Vivaraṇa knew was as follows: indriyapraṇāḍikayā cittasya bāhyavastūparāgāt tadviṣayā sāmānyaviśeṣātmano ’rthasya viśeṣāvadhāraṇapradhānā vṛttiḥ pratyakṣam pramāṇam| phalaṃ tadaviśiṣṭaḥ pauruṣeyaś cittavṛttibodhaḥ| pratisaṃvedī buddheḥ puruṣa ity upariṣṭāt pravedayiṣyāmaḥ|. There are a few text critical issues that ought to be discussed regarding this version of the Bhāṣya text. They will be discussed elsewhere in the future. The variants in various transmissions of the Yogabhāṣya (see Maas 2006, 12–13) do not have immediate effects in the following discussion.￼ The part corresponds to p. 18, l. 25–p. 25, l. 19 of the 1952 Madras edition. For general introduction to the text critical situation and the relationship between witnesses of the Vivaraṇa, see Harimoto 2014, 15–43. There are only two main witnesses to the text. Both are palm-leaf manuscripts written in the Malayalam script. One is preserved in Trivandrum and the other in Lahore. The remaining witnesses, including the 1952 edition, all derive from either of the two palm-leaf manuscripts.￼ One may note that the order of the topics follows that of the Pramāṇasamuccaya of Dignāga.￼ I have introduced a conjectural emendation in the beginning of the answer part: “ucyate—na| pratyakṣasya” against the reading “ucyate na pramāṇasya…” attested in primary witnesses. The editors of the 1952 edition suggested another emendation: ucyate| pratyakṣasya. Note they dropped the particle “na” in the beginning of the answer as well.￼ See note 8 above.￼ Immediately after the cited [q] and [a], the Vivaraṇa has the following: evaṃ ca sati sukharāgādijñānasya kliṣṭākliṣṭarūpasya tadaviśiṣṭapuruṣapratyayaphalāvasānatvāt pratyakṣatā siddhaiva|| (That being the case, it is very much established that the cognition of pleasure, wish, etc., which can be either wholesome or not wholesome, is pratyakṣa since it ends up with the effect that is the notion belonging to puruṣa but not distinguished from it [the cognition.)￼ I have yet to fully comprehend the significance of this view. I have yet to find anyone else who mentions a similar view in relation to pratyakṣa. I intend to conduct further investigations in the future.￼ Some of the other points the V-kāra makes with regard to pramāṇaphala are as follows: there is no independent pramāṇaphala; nor pramāṇa itself is its phala; either action [resulting from pramāṇa] or a state of dravya [the pramāṇa causes man to seek] is mutually figuratively the phala; the Naiyāyikas’ definition of pratyakṣa is wrong; the view that the phala is one of the desire to take, that to remove/avoid, or being impartial is wrong; cittavṛtti is the revealer (abhivyañjaka) for puruṣa; puruṣa’s awareness of cittavṛtti is not pratyakṣa.￼ “nanu ca bhavato ’py upacaritam eva phalam, vṛttyaviśiṣṭāyāḥ phalatvenābhyupagamāt| puruṣasya ca śuddhatvāt, tadākāratāyā anṛtatvam|… (Opponent: For you, too, the result [of pramāṇa] is nothing but figurative. For, [the state (avasthā) of puruṣa] not distinguished from activities [of mind] is accepted as the result [of pramāṇa by you]. Also, since puruṣa is pure, that [puruṣa] has the shape of them [i.e., activities of mind (cittavṛtti)] is erroneous.)” This part corresponds to p. 22, ll. 14–15 in the 1952 Madras edition. I do not propose any major changes to the reading.￼ “ata eva ca samyagdarśanād ātyantikī nivṛttir upapadyate|| yeṣām amithyā phalaṃ teṣāṃ vairāgyakāraṇābhāvāt, samyagdarśanānveṣaṇānupapatter mokṣābhāvaḥ| na ca kriyāpariniṣpādyo mokṣaḥ, anityatvaprasaṅgāt||” This part is 4.3.4.5 and 4.3.4.6 in the outline. The text corresponds to p. 22, ll. 23–26 of the 1952 edition. Note that our author equates mokṣa with ultimate cessation (ātyantikī nivṛttiḥ) and that he distinguishes samyagdarśana (the right view) from pramāṇa, primarily pratyakṣa in this context.￼ A few things should be noted about this position. One is that, as the V-kāra repeatedly exhibits, he believes that salvation is brought about by knowledge (jñāna). Apparently, however, pramāṇa does not bring it. As he clearly states in the 4.3.4.5 and 4.3.4.6 of the outline (see the note above), samyagdarśana brings about nivṛtti (cessation) and that is salvation (mokṣa). See, in this connexion, his explanation of sūtra 1.1, which is translated in Harimoto 2014, 187–193. See especially notes 344 on p. 188 and n. 356 on p. 191. There, he insists that the goal (prayojana) of the Pātañjalayogaśāstra is cessation (nivṛtti) and its means is vivekakhyāti (discriminative knowledge), which he sometimes paraphrases as samyagdarśana.￼ kathaṃ punar avidyāvadviṣayāṇi pratyakṣādīni pramāṇāni śāstrāṇi ceti| 
-	ucyate–dehendriyādiṣv ahaṃmamābhimānarahitasya pramātṛtvānupapattau pramāṇapravṛttyanupapatteḥ| na hīndriyāṇy anupādāya pratyakṣādivyavahāraḥ saṃbhavati| na cādhiṣṭhānam antareṇendriyāṇāṃ vyavahāraḥ saṃbhavati| na cānadhyastātmabhāvena dehena kaścid vyāpriyate| na caitasmin sarvasminn asati asaṅgasyātmanaḥ pramātṛtvam upapadyate| na ca pramātṛtvam antareṇa pramāṇapravṛttir asti| tasmād avidyāvadviṣayāṇy eva pratyakṣādīni pramāṇāni śāstrāṇi ca| 
-	paśvādibhiś cāviśeṣāt| yathā hi paśvādayaḥ śabdādibhiḥ śrotrādīnāṃ saṃbandhe sati, śabdādivijñāne pratikūle jāte tato nivartante, anukūle ca pravartante; yathā daṇḍodyatakaraṃ puruṣam abhimukham upalabhya māṃ hantum ayam icchatīti palāyitum ārabhante, haritatṛṇapūrṇapāṇim upalabhya taṃ praty abhimukhībhavanti; evaṃ puruṣā api vyutpannacittāḥ krūradṛṣṭīn ākrośataḥ khaḍgodyatakarān balavata upalabhya tato nivartante, tadviparītān prati pravartante, ataḥ samānaḥ paśvādibhiḥ puruṣāṇāṃ pramāṇaprameyavyavahāraḥ| paśvādīnāṃ ca prasiddho ’vivekapuraḥsaraḥ pratyakṣādivyavahāraḥ, tatsāmānyadarśanād vyutpattimatām api puruṣāṇāṃ pratyakṣādivyavahāras tatkālaḥ samāna iti niścīyate| (BSBh NSP ed. pp. 40–43)￼ See, for example, Mayeda 1979, 47.
